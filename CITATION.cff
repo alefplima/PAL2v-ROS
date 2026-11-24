@@ -7,6 +7,11 @@ authors:
     given-names: "Alessandro Ferreira Paz"
     affiliation: "Universidade Santa Cecília (UNISANTA)"
 version: "1.0.0"
+doi: "10.5281/zenodo.24499334"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24499333"
+    description: "Concept DOI (all versions)"
 date-released: "2026-11-24"
 license: Apache-2.0
 repository-code: "https://github.com/alefplima/PAL2v-ROS"

@@ -1,6 +1,6 @@
 # PAL2v-ROS: Paraconsistent Annotated Logic for ROS 2
 
-<!-- DOI badge added after the first Zenodo release -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24499334.svg)](https://doi.org/10.5281/zenodo.24499334)
 
 A library of the **Paraconsistent Annotated Logic with two-valued annotation (PAL2v, "LPA2v" in Portuguese)**
 for perception and control in mobile robots and drones. The core is pure Python with no dependencies, and
@@ -58,8 +58,9 @@ bash experiments/run_e5.sh              # E5, PX4 SITL (~5 h)
 ```
 
 ## How to cite
-See [CITATION.cff](CITATION.cff) (GitHub: "Cite this repository"). The software DOI is minted by Zenodo for
-each release.
+Software: DOI [10.5281/zenodo.24499334](https://doi.org/10.5281/zenodo.24499334) (version 1.0.0, used in the paper);
+[10.5281/zenodo.24499333](https://doi.org/10.5281/zenodo.24499333) always resolves to the latest version.
+See [CITATION.cff](CITATION.cff) (GitHub: "Cite this repository").
 
 ## License
 Apache-2.0 (see [LICENSE](LICENSE) and [NOTICE](NOTICE)). The TurtleBot3 model in
