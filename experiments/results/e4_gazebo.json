@@ -1,0 +1,4687 @@
+{
+  "env": {
+    "date": "2026-11-24T08:44:26",
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "lpa2v": "1.0.0",
+    "platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.39",
+    "cpu": "x86_64"
+  },
+  "config": {
+    "sigma": [
+      0.05,
+      0.02,
+      0.08
+    ],
+    "rmax": 3.5,
+    "fs": 20.0,
+    "max_rate": 1.0,
+    "fault": [
+      30.0,
+      75.0
+    ]
+  },
+  "resumo": {
+    "S0_nominal": {
+      "pal2v": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": NaN,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.3521291553974152,
+          "std": 0.03716846813228963
+        },
+        "percorrido": {
+          "mean": 12.8867962988284,
+          "std": 0.2940618278252758
+        },
+        "rmse_falha": {
+          "mean": 0.18630863068056264,
+          "std": 0.0189784316978416
+        },
+        "deteccao": 0.019333333333333334,
+        "falso_alarme": 0.0405749326447017
+      },
+      "mean": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.34671877324581146,
+          "std": 0.05081640066263294
+        },
+        "percorrido": {
+          "mean": 13.10266104309151,
+          "std": 0.2613227972358101
+        },
+        "rmse_falha": {
+          "mean": 0.15076098934191,
+          "std": 0.03499919470977258
+        }
+      },
+      "median": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.36358868777751924,
+          "std": 0.03189003495196783
+        },
+        "percorrido": {
+          "mean": 13.114645055736599,
+          "std": 0.2644881751787113
+        },
+        "rmse_falha": {
+          "mean": 0.17298127452080775,
+          "std": 0.015090567589907199
+        }
+      },
+      "ivw": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.3775568813085556,
+          "std": 0.012374193505107867
+        },
+        "percorrido": {
+          "mean": 13.209926793943094,
+          "std": 0.1515368223154663
+        },
+        "rmse_falha": {
+          "mean": 0.23325284746745104,
+          "std": 0.01874453814333618
+        }
+      },
+      "paraextrctr": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.3806138336658478,
+          "std": 0.02902336292567358
+        },
+        "percorrido": {
+          "mean": 13.355938967418231,
+          "std": 0.6366343925920799
+        },
+        "rmse_falha": {
+          "mean": 0.16459724568997014,
+          "std": 0.02236821942244024
+        }
+      },
+      "kf_chi2": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.3613422930240631,
+          "std": 0.030002527320301214
+        },
+        "percorrido": {
+          "mean": 12.406172106997952,
+          "std": 0.2250822991038715
+        },
+        "rmse_falha": {
+          "mean": 0.24425098682500632,
+          "std": 0.027608044769255644
+        },
+        "deteccao": 0.027555555555555555,
+        "falso_alarme": 0.05855828347363397
+      }
+    },
+    "S1_travado": {
+      "pal2v": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": NaN,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.36264657974243164,
+          "std": 0.04515938610669332
+        },
+        "percorrido": {
+          "mean": 13.462069457935351,
+          "std": 0.938220234478046
+        },
+        "rmse_falha": {
+          "mean": 0.1578515554678604,
+          "std": 0.0408142836817652
+        },
+        "deteccao": 0.7341111111111112,
+        "falso_alarme": 0.03798312667455078
+      },
+      "mean": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 1.9,
+          "std": 0.31622776601683794
+        },
+        "t_contato": {
+          "mean": 37.7,
+          "std": 0.20412414523193095
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.638586272073663,
+          "std": 0.16653796596498752
+        },
+        "rmse_falha": {
+          "mean": 0.4493443985295527,
+          "std": 0.026949599006870294
+        }
+      },
+      "median": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.3536194711923599,
+          "std": 0.04810413586847399
+        },
+        "percorrido": {
+          "mean": 13.94370303753811,
+          "std": 0.8609163617415927
+        },
+        "rmse_falha": {
+          "mean": 0.13931410571682415,
+          "std": 0.03927566621248826
+        }
+      },
+      "ivw": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 37.945,
+          "std": 0.8652071043012383
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.964254761107137,
+          "std": 0.31294257119160585
+        },
+        "rmse_falha": {
+          "mean": 1.1732983503245387,
+          "std": 0.11724461474897496
+        }
+      },
+      "paraextrctr": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.45,
+          "std": 0.18104634152000268
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.806648557752183,
+          "std": 0.26565182817561506
+        },
+        "rmse_falha": {
+          "mean": 0.6399733829781507,
+          "std": 0.023739819423987618
+        }
+      },
+      "kf_chi2": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.36,
+          "std": 0.21959558789334221
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.731019903509303,
+          "std": 0.2247489504772589
+        },
+        "rmse_falha": {
+          "mean": 1.3839462995187497,
+          "std": 0.03352644301196935
+        },
+        "deteccao": 0.0,
+        "falso_alarme": 0.05782140747459613
+      }
+    },
+    "S2_picos": {
+      "pal2v": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": NaN,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.350710591673851,
+          "std": 0.04246095904078966
+        },
+        "percorrido": {
+          "mean": 12.785219107988244,
+          "std": 0.3242623566408829
+        },
+        "rmse_falha": {
+          "mean": 0.18819150848689542,
+          "std": 0.015033999813511148
+        },
+        "deteccao": 0.19388888888888886,
+        "falso_alarme": 0.038650024801187406
+      },
+      "mean": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.38228508830070496,
+          "std": 0.04648907180440775
+        },
+        "percorrido": {
+          "mean": 13.509761806220164,
+          "std": 0.5645786113335691
+        },
+        "rmse_falha": {
+          "mean": 0.20100504532519164,
+          "std": 0.02695908521556734
+        }
+      },
+      "median": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.35503886044025423,
+          "std": 0.04311586412704545
+        },
+        "percorrido": {
+          "mean": 13.212858939774742,
+          "std": 0.2361332381049974
+        },
+        "rmse_falha": {
+          "mean": 0.1547015820502948,
+          "std": 0.03640889321002148
+        }
+      },
+      "ivw": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.37749733328819274,
+          "std": 0.028537850407062464
+        },
+        "percorrido": {
+          "mean": 14.649873164503722,
+          "std": 0.7198102277248646
+        },
+        "rmse_falha": {
+          "mean": 0.3411381038811197,
+          "std": 0.04061200092889355
+        }
+      },
+      "paraextrctr": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.35325935781002044,
+          "std": 0.05052953336751743
+        },
+        "percorrido": {
+          "mean": 13.411631761246236,
+          "std": 0.7371684846307269
+        },
+        "rmse_falha": {
+          "mean": 0.18186085291827708,
+          "std": 0.026855670880601278
+        }
+      },
+      "kf_chi2": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.6019406259059906,
+          "std": 0.8056192337388033
+        },
+        "percorrido": {
+          "mean": 11.267466437996893,
+          "std": 3.967529474050238
+        },
+        "rmse_falha": {
+          "mean": 0.20803554178877876,
+          "std": 0.08128887375730386
+        },
+        "deteccao": 0.15944444444444444,
+        "falso_alarme": 0.05067850091693179
+      }
+    },
+    "S3_deriva": {
+      "pal2v": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": NaN,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.3811126470565796,
+          "std": 0.045148695947031886
+        },
+        "percorrido": {
+          "mean": 13.604086038498092,
+          "std": 0.7134915521286501
+        },
+        "rmse_falha": {
+          "mean": 0.17090937961604274,
+          "std": 0.054516275977752014
+        },
+        "deteccao": 0.9633287603510071,
+        "falso_alarme": 0.04131337735124961
+      },
+      "mean": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.415000000000006,
+          "std": 0.373459800008276
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.878761506300412,
+          "std": 0.17625456347085808
+        },
+        "rmse_falha": {
+          "mean": 1.0506909019045572,
+          "std": 0.0009496032326751092
+        }
+      },
+      "median": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.3419541835784912,
+          "std": 0.052152812754855594
+        },
+        "percorrido": {
+          "mean": 13.969242865571875,
+          "std": 0.9564045994160034
+        },
+        "rmse_falha": {
+          "mean": 0.13424919741878097,
+          "std": 0.03890390032838845
+        }
+      },
+      "ivw": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 1.9,
+          "std": 0.31622776601683794
+        },
+        "t_contato": {
+          "mean": 38.459999999999994,
+          "std": 0.22705848487901947
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.953971200955895,
+          "std": 0.22580026012842858
+        },
+        "rmse_falha": {
+          "mean": 2.545516981265247,
+          "std": 0.0009108925310631838
+        }
+      },
+      "paraextrctr": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.67,
+          "std": 0.29078437983419303
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.964831789056998,
+          "std": 0.22397103283052278
+        },
+        "rmse_falha": {
+          "mean": 1.129328735289951,
+          "std": 0.0018635663302156561
+        }
+      },
+      "kf_chi2": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.629999999999995,
+          "std": 0.34657049948186675
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.829200387379164,
+          "std": 0.32080050115650793
+        },
+        "rmse_falha": {
+          "mean": 3.105515148132844,
+          "std": 0.0011133677653452476
+        },
+        "deteccao": 0.0044444444444444444,
+        "falso_alarme": 0.05983026168773113
+      }
+    },
+    "S4_dropout": {
+      "pal2v": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": NaN,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.3502339437603951,
+          "std": 0.07987928954053365
+        },
+        "percorrido": {
+          "mean": 13.43936718962141,
+          "std": 0.667685721657537
+        },
+        "rmse_falha": {
+          "mean": 0.19153995836169405,
+          "std": 0.026867213380575655
+        },
+        "deteccao": 0.9933333333333334,
+        "falso_alarme": 0.04465805875506813
+      },
+      "mean": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.80499999999999,
+          "std": 0.3183725979275092
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.871664941505912,
+          "std": 0.1720025664347913
+        },
+        "rmse_falha": {
+          "mean": 1.1466235628839738,
+          "std": 0.003899775215077489
+        }
+      },
+      "median": {
+        "n": 10,
+        "pct_colisao": 0.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "dist_min": {
+          "mean": 0.35266541242599486,
+          "std": 0.04251533255559114
+        },
+        "percorrido": {
+          "mean": 13.835275553992826,
+          "std": 0.9184243003508651
+        },
+        "rmse_falha": {
+          "mean": 0.14400849649304354,
+          "std": 0.03262272541579901
+        }
+      },
+      "ivw": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 1.9,
+          "std": 0.31622776601683794
+        },
+        "t_contato": {
+          "mean": 38.21999999999999,
+          "std": 0.38093452339097694
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.851090088115503,
+          "std": 0.20428252672930763
+        },
+        "rmse_falha": {
+          "mean": 2.7664043809603314,
+          "std": 0.008378138331396483
+        }
+      },
+      "paraextrctr": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.001953125,
+        "colisoes": {
+          "mean": 1.9,
+          "std": 0.31622776601683794
+        },
+        "t_contato": {
+          "mean": 38.58,
+          "std": 0.31019706997684937
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.98195613516318,
+          "std": 0.20077769748133933
+        },
+        "rmse_falha": {
+          "mean": 1.162175943723633,
+          "std": 0.005255655870130565
+        }
+      },
+      "kf_chi2": {
+        "n": 10,
+        "pct_colisao": 40.0,
+        "p_vs_pal2v": 0.06788915486182899,
+        "colisoes": {
+          "mean": 1.0,
+          "std": 1.4907119849998598
+        },
+        "t_contato": {
+          "mean": 2.005,
+          "std": 3.1248511075640777
+        },
+        "dist_min": {
+          "mean": 0.20280435383319856,
+          "std": 0.177209678938911
+        },
+        "percorrido": {
+          "mean": 12.949273261121618,
+          "std": 0.7750471856685341
+        },
+        "rmse_falha": {
+          "mean": 0.958489400995078,
+          "std": 0.9797008156412762
+        },
+        "deteccao": 0.7502222222222221,
+        "falso_alarme": 0.055006275769227966
+      }
+    },
+    "S6_duplo": {
+      "pal2v": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": NaN,
+        "colisoes": {
+          "mean": 1.9,
+          "std": 0.31622776601683794
+        },
+        "t_contato": {
+          "mean": 38.760000000000005,
+          "std": 0.4293405796489937
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.866265260407511,
+          "std": 0.255249046944779
+        },
+        "rmse_falha": {
+          "mean": 1.1363646807270367,
+          "std": 0.10301176567479378
+        },
+        "deteccao": 0.9977777777777778,
+        "falso_alarme": 0.04944814814365213
+      },
+      "mean": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 1.0,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.745,
+          "std": 0.3050045537000678
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.880297701932644,
+          "std": 0.22433149913971864
+        },
+        "rmse_falha": {
+          "mean": 1.5603217904582516,
+          "std": 0.03539489174929017
+        }
+      },
+      "median": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.30965590304585666,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.480000000000004,
+          "std": 0.7821622451753711
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.873908264694867,
+          "std": 0.2803211811486511
+        },
+        "rmse_falha": {
+          "mean": 1.3217067728805199,
+          "std": 0.17503267693453478
+        }
+      },
+      "ivw": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.028263033165028862,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.095,
+          "std": 0.5340880077290631
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.934182035248188,
+          "std": 0.31742137473276455
+        },
+        "rmse_falha": {
+          "mean": 2.8325164867000954,
+          "std": 0.008978641281206639
+        }
+      },
+      "paraextrctr": {
+        "n": 10,
+        "pct_colisao": 100.0,
+        "p_vs_pal2v": 0.5131877489580465,
+        "colisoes": {
+          "mean": 2.0,
+          "std": 0.0
+        },
+        "t_contato": {
+          "mean": 38.61,
+          "std": 0.5546770832355218
+        },
+        "dist_min": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "percorrido": {
+          "mean": 8.954563664809195,
+          "std": 0.1681257902877331
+        },
+        "rmse_falha": {
+          "mean": 1.4985614522438688,
+          "std": 0.06236449040772347
+        }
+      },
+      "kf_chi2": {
+        "n": 10,
+        "pct_colisao": 50.0,
+        "p_vs_pal2v": 0.009765625,
+        "colisoes": {
+          "mean": 1.0,
+          "std": 1.0540925533894598
+        },
+        "t_contato": {
+          "mean": 9.855,
+          "std": 16.197315449721224
+        },
+        "dist_min": {
+          "mean": 0.1463245801627636,
+          "std": 0.15328688441371402
+        },
+        "percorrido": {
+          "mean": 12.714505557114197,
+          "std": 2.4116123025023186
+        },
+        "rmse_falha": {
+          "mean": 0.7393275405103594,
+          "std": 0.5668150246810392
+        },
+        "deteccao": 0.936888888888889,
+        "falso_alarme": 0.05687094677675815
+      }
+    }
+  },
+  "malha_aberta": {
+    "S0_nominal": {
+      "pal2v": {
+        "rmse_falha": "0.15 ± 0.01",
+        "max_falha": "2.59 ± 0.14"
+      },
+      "mean": {
+        "rmse_falha": "0.12 ± 0.01",
+        "max_falha": "2.27 ± 0.44"
+      },
+      "median": {
+        "rmse_falha": "0.12 ± 0.01",
+        "max_falha": "2.58 ± 0.13"
+      },
+      "ivw": {
+        "rmse_falha": "0.16 ± 0.05",
+        "max_falha": "2.30 ± 0.46"
+      },
+      "paraextrctr": {
+        "rmse_falha": "0.12 ± 0.02",
+        "max_falha": "2.34 ± 0.36"
+      },
+      "kf_chi2": {
+        "rmse_falha": "0.22 ± 0.04",
+        "max_falha": "2.67 ± 0.12"
+      }
+    },
+    "S1_travado": {
+      "pal2v": {
+        "rmse_falha": "0.12 ± 0.03",
+        "max_falha": "2.11 ± 0.64"
+      },
+      "mean": {
+        "rmse_falha": "0.24 ± 0.02",
+        "max_falha": "1.84 ± 0.63"
+      },
+      "median": {
+        "rmse_falha": "0.11 ± 0.02",
+        "max_falha": "2.06 ± 0.64"
+      },
+      "ivw": {
+        "rmse_falha": "0.56 ± 0.06",
+        "max_falha": "1.62 ± 0.46"
+      },
+      "paraextrctr": {
+        "rmse_falha": "0.26 ± 0.03",
+        "max_falha": "1.83 ± 0.63"
+      },
+      "kf_chi2": {
+        "rmse_falha": "0.68 ± 0.07",
+        "max_falha": "1.62 ± 0.36"
+      }
+    },
+    "S2_picos": {
+      "pal2v": {
+        "rmse_falha": "0.15 ± 0.01",
+        "max_falha": "2.51 ± 0.09"
+      },
+      "mean": {
+        "rmse_falha": "0.17 ± 0.01",
+        "max_falha": "2.28 ± 0.34"
+      },
+      "median": {
+        "rmse_falha": "0.11 ± 0.01",
+        "max_falha": "2.37 ± 0.25"
+      },
+      "ivw": {
+        "rmse_falha": "0.33 ± 0.02",
+        "max_falha": "2.27 ± 0.41"
+      },
+      "paraextrctr": {
+        "rmse_falha": "0.15 ± 0.01",
+        "max_falha": "2.28 ± 0.33"
+      },
+      "kf_chi2": {
+        "rmse_falha": "0.22 ± 0.03",
+        "max_falha": "2.60 ± 0.14"
+      }
+    },
+    "S3_deriva": {
+      "pal2v": {
+        "rmse_falha": "0.14 ± 0.05",
+        "max_falha": "2.06 ± 0.88"
+      },
+      "mean": {
+        "rmse_falha": "0.79 ± 0.05",
+        "max_falha": "1.72 ± 0.35"
+      },
+      "median": {
+        "rmse_falha": "0.12 ± 0.03",
+        "max_falha": "1.87 ± 0.91"
+      },
+      "ivw": {
+        "rmse_falha": "1.94 ± 0.12",
+        "max_falha": "2.54 ± 0.04"
+      },
+      "paraextrctr": {
+        "rmse_falha": "0.56 ± 0.06",
+        "max_falha": "1.66 ± 0.44"
+      },
+      "kf_chi2": {
+        "rmse_falha": "1.22 ± 0.90",
+        "max_falha": "2.71 ± 0.35"
+      }
+    },
+    "S4_dropout": {
+      "pal2v": {
+        "rmse_falha": "0.15 ± 0.03",
+        "max_falha": "2.39 ± 0.29"
+      },
+      "mean": {
+        "rmse_falha": "0.87 ± 0.05",
+        "max_falha": "1.80 ± 0.26"
+      },
+      "median": {
+        "rmse_falha": "0.12 ± 0.02",
+        "max_falha": "2.27 ± 0.38"
+      },
+      "ivw": {
+        "rmse_falha": "2.13 ± 0.13",
+        "max_falha": "2.55 ± 0.04"
+      },
+      "paraextrctr": {
+        "rmse_falha": "0.61 ± 0.06",
+        "max_falha": "1.79 ± 0.31"
+      },
+      "kf_chi2": {
+        "rmse_falha": "0.77 ± 0.92",
+        "max_falha": "2.62 ± 0.42"
+      }
+    },
+    "S6_duplo": {
+      "pal2v": {
+        "rmse_falha": "1.14 ± 0.10",
+        "max_falha": "1.21 ± 0.11"
+      },
+      "mean": {
+        "rmse_falha": "1.56 ± 0.03",
+        "max_falha": "1.68 ± 0.04"
+      },
+      "median": {
+        "rmse_falha": "1.29 ± 0.11",
+        "max_falha": "1.37 ± 0.11"
+      },
+      "ivw": {
+        "rmse_falha": "2.84 ± 0.01",
+        "max_falha": "2.95 ± 0.01"
+      },
+      "paraextrctr": {
+        "rmse_falha": "1.49 ± 0.04",
+        "max_falha": "1.57 ± 0.05"
+      },
+      "kf_chi2": {
+        "rmse_falha": "0.55 ± 0.66",
+        "max_falha": "0.64 ± 0.65"
+      }
+    }
+  },
+  "por_rodada": {
+    "S0_nominal": {
+      "pal2v": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4034897983074188,
+          "percorrido": 13.006063569464692,
+          "rmse_falha": 0.20401502274873823,
+          "rmse_fora": 0.07969544371762846,
+          "amostras": 1761,
+          "deteccao": 0.022222222222222223,
+          "falso_alarme": 0.03832752613240418
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3731839060783386,
+          "percorrido": 13.365853504381269,
+          "rmse_falha": 0.19517291765388609,
+          "rmse_fora": 0.20154815806151122,
+          "amostras": 1789,
+          "deteccao": 0.02,
+          "falso_alarme": 0.031496062992125984
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38930803537368774,
+          "percorrido": 12.80154865404548,
+          "rmse_falha": 0.19132888717069252,
+          "rmse_fora": 0.20541644498654704,
+          "amostras": 1791,
+          "deteccao": 0.015555555555555555,
+          "falso_alarme": 0.04601571268237935
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3128160834312439,
+          "percorrido": 12.59503330465245,
+          "rmse_falha": 0.1951319500845229,
+          "rmse_fora": 0.19266567535024126,
+          "amostras": 1789,
+          "deteccao": 0.015555555555555555,
+          "falso_alarme": 0.031496062992125984
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.34196367859840393,
+          "percorrido": 12.8018561924383,
+          "rmse_falha": 0.17910703377248735,
+          "rmse_fora": 0.20912432515388185,
+          "amostras": 1791,
+          "deteccao": 0.014444444444444444,
+          "falso_alarme": 0.04713804713804714
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2894846796989441,
+          "percorrido": 12.663030296260441,
+          "rmse_falha": 0.13864360373630236,
+          "rmse_fora": 0.18987890548164005,
+          "amostras": 1792,
+          "deteccao": 0.008888888888888889,
+          "falso_alarme": 0.03139013452914798
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3837727904319763,
+          "percorrido": 13.205148884541556,
+          "rmse_falha": 0.19039003489098505,
+          "rmse_fora": 0.19703806881588293,
+          "amostras": 1792,
+          "deteccao": 0.014444444444444444,
+          "falso_alarme": 0.0515695067264574
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3191549777984619,
+          "percorrido": 13.153801627107262,
+          "rmse_falha": 0.1954714429944822,
+          "rmse_fora": 0.19399378981225956,
+          "amostras": 1792,
+          "deteccao": 0.013333333333333334,
+          "falso_alarme": 0.042600896860986545
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.366320937871933,
+          "percorrido": 12.84784536019345,
+          "rmse_falha": 0.17423754641063458,
+          "rmse_fora": 0.2099764175566441,
+          "amostras": 1788,
+          "deteccao": 0.03111111111111111,
+          "falso_alarme": 0.0472972972972973
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3417966663837433,
+          "percorrido": 12.427781595199125,
+          "rmse_falha": 0.19958786734289538,
+          "rmse_fora": 0.1879235658525576,
+          "amostras": 1785,
+          "deteccao": 0.03777777777777778,
+          "falso_alarme": 0.0384180790960452
+        }
+      },
+      "mean": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.40532156825065613,
+          "percorrido": 13.461283538488983,
+          "rmse_falha": 0.1839852521116462,
+          "rmse_fora": 0.13155805065056478,
+          "amostras": 1773
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.30047640204429626,
+          "percorrido": 12.99592966315461,
+          "rmse_falha": 0.16018898622790267,
+          "rmse_fora": 0.183554899847261,
+          "amostras": 1787
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.34670490026474,
+          "percorrido": 13.393844755435433,
+          "rmse_falha": 0.15506096397566377,
+          "rmse_fora": 0.16996558246666088,
+          "amostras": 1791
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2842099666595459,
+          "percorrido": 12.75649510245685,
+          "rmse_falha": 0.14977618731347186,
+          "rmse_fora": 0.173728652920137,
+          "amostras": 1790
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.29763415455818176,
+          "percorrido": 12.928168326235788,
+          "rmse_falha": 0.08404105657703892,
+          "rmse_fora": 0.17936532554795104,
+          "amostras": 1790
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.28411734104156494,
+          "percorrido": 12.6859145375425,
+          "rmse_falha": 0.09167348462106022,
+          "rmse_fora": 0.16769562452868478,
+          "amostras": 1793
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.40713268518447876,
+          "percorrido": 13.298094492689646,
+          "rmse_falha": 0.16565418702755377,
+          "rmse_fora": 0.1515318524685593,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3693443238735199,
+          "percorrido": 13.070719243821294,
+          "rmse_falha": 0.16059835319857932,
+          "rmse_fora": 0.1953454792906846,
+          "amostras": 1789
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.39521580934524536,
+          "percorrido": 13.216891767043716,
+          "rmse_falha": 0.17429668172904975,
+          "rmse_fora": 0.1824989396827922,
+          "amostras": 1789
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3770305812358856,
+          "percorrido": 13.219269004046275,
+          "rmse_falha": 0.18233474063713379,
+          "rmse_fora": 0.17049175529823463,
+          "amostras": 1786
+        }
+      },
+      "median": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.34302836656570435,
+          "percorrido": 12.586708280872262,
+          "rmse_falha": 0.1499038489897271,
+          "rmse_fora": 0.13233390579277457,
+          "amostras": 1791
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3881790041923523,
+          "percorrido": 12.944418284164023,
+          "rmse_falha": 0.17626564259039176,
+          "rmse_fora": 0.06753811665160507,
+          "amostras": 1739
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.321119099855423,
+          "percorrido": 13.241824311014385,
+          "rmse_falha": 0.20250116604076193,
+          "rmse_fora": 0.07099964226150159,
+          "amostras": 1789
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3831253945827484,
+          "percorrido": 13.28411302973931,
+          "rmse_falha": 0.18142540612496147,
+          "rmse_fora": 0.19196399132502565,
+          "amostras": 1793
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3949240744113922,
+          "percorrido": 13.180593187851429,
+          "rmse_falha": 0.18291405173516817,
+          "rmse_fora": 0.07229256327730949,
+          "amostras": 1784
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3830811083316803,
+          "percorrido": 13.482635016091333,
+          "rmse_falha": 0.18218497476503162,
+          "rmse_fora": 0.14205552096097523,
+          "amostras": 1791
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3664737641811371,
+          "percorrido": 12.903410922886188,
+          "rmse_falha": 0.15936225615061914,
+          "rmse_fora": 0.17733587900684447,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.31056663393974304,
+          "percorrido": 13.108269797343741,
+          "rmse_falha": 0.16661416201441204,
+          "rmse_fora": 0.16333060069319946,
+          "amostras": 1792
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.40091392397880554,
+          "percorrido": 13.401434779834839,
+          "rmse_falha": 0.1628984366831656,
+          "rmse_fora": 0.1461889004887784,
+          "amostras": 1791
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.34447550773620605,
+          "percorrido": 13.01304294756847,
+          "rmse_falha": 0.16574280011383888,
+          "rmse_fora": 0.15738210939156033,
+          "amostras": 1789
+        }
+      },
+      "ivw": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3769363760948181,
+          "percorrido": 13.216335685469392,
+          "rmse_falha": 0.23494516818269207,
+          "rmse_fora": 0.18753472199930016,
+          "amostras": 1763
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3839341998100281,
+          "percorrido": 13.087760390441368,
+          "rmse_falha": 0.27978943536996215,
+          "rmse_fora": 0.0973790204788085,
+          "amostras": 1773
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3857235312461853,
+          "percorrido": 13.291717476069289,
+          "rmse_falha": 0.23089953993874202,
+          "rmse_fora": 0.19453582839392033,
+          "amostras": 1791
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.37038978934288025,
+          "percorrido": 13.349421711193793,
+          "rmse_falha": 0.22001655682162252,
+          "rmse_fora": 0.21478432351235507,
+          "amostras": 1791
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3472171723842621,
+          "percorrido": 13.053335653645325,
+          "rmse_falha": 0.22392120390205494,
+          "rmse_fora": 0.21339362701312106,
+          "amostras": 1784
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3822222650051117,
+          "percorrido": 13.230641404664436,
+          "rmse_falha": 0.24862471408788378,
+          "rmse_fora": 0.13039039833034874,
+          "amostras": 1791
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3855900466442108,
+          "percorrido": 13.465187968963892,
+          "rmse_falha": 0.22336143935899608,
+          "rmse_fora": 0.08492339800148262,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3896077573299408,
+          "percorrido": 12.951613942854566,
+          "rmse_falha": 0.22881605166747085,
+          "rmse_fora": 0.09831527468030189,
+          "amostras": 1787
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3827301561832428,
+          "percorrido": 13.290521157285335,
+          "rmse_falha": 0.2272241896557552,
+          "rmse_fora": 0.2305621466259363,
+          "amostras": 1789
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3712175190448761,
+          "percorrido": 13.162732548843543,
+          "rmse_falha": 0.21493017568933045,
+          "rmse_fora": 0.08492467581535329,
+          "amostras": 1790
+        }
+      },
+      "paraextrctr": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3912177085876465,
+          "percorrido": 13.270333048693734,
+          "rmse_falha": 0.18075264777413,
+          "rmse_fora": 0.17645908687580697,
+          "amostras": 1781
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3938715159893036,
+          "percorrido": 13.352247851697618,
+          "rmse_falha": 0.1906071283628853,
+          "rmse_fora": 0.07699415831957163,
+          "amostras": 1790
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.356757253408432,
+          "percorrido": 12.801090732200313,
+          "rmse_falha": 0.16073952692046908,
+          "rmse_fora": 0.18277706909527508,
+          "amostras": 1778
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.39135247468948364,
+          "percorrido": 13.291351672092214,
+          "rmse_falha": 0.17383039235633235,
+          "rmse_fora": 0.14259242610247397,
+          "amostras": 1788
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3815225064754486,
+          "percorrido": 12.778267617134775,
+          "rmse_falha": 0.16882040351503821,
+          "rmse_fora": 0.16687334081326333,
+          "amostras": 1792
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.32281506061553955,
+          "percorrido": 13.119445851019961,
+          "rmse_falha": 0.15614409403095555,
+          "rmse_fora": 0.18015028948561068,
+          "amostras": 1791
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.413495808839798,
+          "percorrido": 13.359222836566968,
+          "rmse_falha": 0.17009442504358827,
+          "rmse_fora": 0.1434811393454089,
+          "amostras": 1780
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4198571443557739,
+          "percorrido": 15.059927280767752,
+          "rmse_falha": 0.10756629157985825,
+          "rmse_fora": 0.06298672845729167,
+          "amostras": 1791
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3800401985645294,
+          "percorrido": 13.358995370790936,
+          "rmse_falha": 0.1741650677090585,
+          "rmse_fora": 0.11813867153578486,
+          "amostras": 1791
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3552086651325226,
+          "percorrido": 13.168507413218046,
+          "rmse_falha": 0.16325247960738581,
+          "rmse_fora": 0.18606438996351868,
+          "amostras": 1790
+        }
+      },
+      "kf_chi2": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.37478500604629517,
+          "percorrido": 12.744871909781436,
+          "rmse_falha": 0.2587042215027044,
+          "rmse_fora": 0.270171105551452,
+          "amostras": 1793,
+          "deteccao": 0.027777777777777776,
+          "falso_alarme": 0.06270996640537514
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.36018750071525574,
+          "percorrido": 12.631249461466513,
+          "rmse_falha": 0.251667739655614,
+          "rmse_fora": 0.27352113620003526,
+          "amostras": 1789,
+          "deteccao": 0.028888888888888888,
+          "falso_alarme": 0.07536557930258718
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.30826663970947266,
+          "percorrido": 12.423579436146442,
+          "rmse_falha": 0.19541795657575256,
+          "rmse_fora": 0.2739923410449818,
+          "amostras": 1793,
+          "deteccao": 0.02,
+          "falso_alarme": 0.04927211646136618
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38257020711898804,
+          "percorrido": 12.150862296389434,
+          "rmse_falha": 0.2725477408546522,
+          "rmse_fora": 0.28839330223556775,
+          "amostras": 1791,
+          "deteccao": 0.024444444444444446,
+          "falso_alarme": 0.04826038159371493
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3063601851463318,
+          "percorrido": 12.348282375565137,
+          "rmse_falha": 0.20641381724820645,
+          "rmse_fora": 0.27716605000542893,
+          "amostras": 1775,
+          "deteccao": 0.02,
+          "falso_alarme": 0.05942857142857143
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3869495093822479,
+          "percorrido": 12.205011060946742,
+          "rmse_falha": 0.24109535607000998,
+          "rmse_fora": 0.2469262378938676,
+          "amostras": 1791,
+          "deteccao": 0.03,
+          "falso_alarme": 0.04938271604938271
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.35830140113830566,
+          "percorrido": 12.585557579843474,
+          "rmse_falha": 0.2465297100569035,
+          "rmse_fora": 0.2911888465574575,
+          "amostras": 1791,
+          "deteccao": 0.05,
+          "falso_alarme": 0.0718294051627385
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3793312907218933,
+          "percorrido": 12.617142988592716,
+          "rmse_falha": 0.22538886226759156,
+          "rmse_fora": 0.29340506450240944,
+          "amostras": 1792,
+          "deteccao": 0.017777777777777778,
+          "falso_alarme": 0.07511210762331838
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3839265704154968,
+          "percorrido": 12.184029692373983,
+          "rmse_falha": 0.27600343606781413,
+          "rmse_fora": 0.27197102177668925,
+          "amostras": 1791,
+          "deteccao": 0.02666666666666667,
+          "falso_alarme": 0.04601571268237935
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.372744619846344,
+          "percorrido": 12.171134268873637,
+          "rmse_falha": 0.26874102795081434,
+          "rmse_fora": 0.28164392620064527,
+          "amostras": 1792,
+          "deteccao": 0.03,
+          "falso_alarme": 0.04820627802690583
+        }
+      }
+    },
+    "S1_travado": {
+      "pal2v": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4141349494457245,
+          "percorrido": 15.13924775436288,
+          "rmse_falha": 0.1201226879982661,
+          "rmse_fora": 0.06459997761444829,
+          "amostras": 1789,
+          "deteccao": 0.75,
+          "falso_alarme": 0.03374578177727784
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.40397897362709045,
+          "percorrido": 13.185468833882162,
+          "rmse_falha": 0.20060311967319175,
+          "rmse_fora": 0.14446807053499566,
+          "amostras": 1791,
+          "deteccao": 0.7044444444444444,
+          "falso_alarme": 0.03928170594837262
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.40094542503356934,
+          "percorrido": 13.370213190978541,
+          "rmse_falha": 0.20081753647673978,
+          "rmse_fora": 0.10346731901791915,
+          "amostras": 1788,
+          "deteccao": 0.7533333333333333,
+          "falso_alarme": 0.039414414414414414
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38828927278518677,
+          "percorrido": 13.574133853609116,
+          "rmse_falha": 0.17596247819504693,
+          "rmse_fora": 0.10661281000535042,
+          "amostras": 1789,
+          "deteccao": 0.8144444444444444,
+          "falso_alarme": 0.04611923509561305
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.33360204100608826,
+          "percorrido": 13.204428799748246,
+          "rmse_falha": 0.1642210124788156,
+          "rmse_fora": 0.20264727653195966,
+          "amostras": 1790,
+          "deteccao": 0.7411111111111112,
+          "falso_alarme": 0.04943820224719101
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2936388850212097,
+          "percorrido": 12.796900014352266,
+          "rmse_falha": 0.09214587398423625,
+          "rmse_fora": 0.1903425605217722,
+          "amostras": 1791,
+          "deteccao": 0.81,
+          "falso_alarme": 0.03928170594837262
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.31414568424224854,
+          "percorrido": 12.858479244360431,
+          "rmse_falha": 0.1710404583434054,
+          "rmse_fora": 0.1892934495985666,
+          "amostras": 1791,
+          "deteccao": 0.7233333333333334,
+          "falso_alarme": 0.030303030303030304
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4027511775493622,
+          "percorrido": 15.15737692316028,
+          "rmse_falha": 0.09403938657852572,
+          "rmse_fora": 0.06618530883449998,
+          "amostras": 1790,
+          "deteccao": 0.5911111111111111,
+          "falso_alarme": 0.03932584269662921
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3147030472755432,
+          "percorrido": 12.64372356242397,
+          "rmse_falha": 0.17894023709137138,
+          "rmse_fora": 0.18937935014083535,
+          "amostras": 1790,
+          "deteccao": 0.7533333333333333,
+          "falso_alarme": 0.030337078651685393
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.36027634143829346,
+          "percorrido": 12.690722402475622,
+          "rmse_falha": 0.18062276385900516,
+          "rmse_fora": 0.18761293711265403,
+          "amostras": 1790,
+          "deteccao": 0.7,
+          "falso_alarme": 0.03258426966292135
+        }
+      },
+      "mean": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 37.45,
+          "dist_min": 0.0,
+          "percorrido": 8.429662683881524,
+          "rmse_falha": 0.49795101523373714,
+          "rmse_fora": 0.16219016231139777,
+          "amostras": 1776
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 37.85,
+          "dist_min": 0.0,
+          "percorrido": 8.869305088098798,
+          "rmse_falha": 0.41492180494251063,
+          "rmse_fora": 0.11060240852834667,
+          "amostras": 1790
+        },
+        "2": {
+          "colisoes": 1,
+          "t_contato": 37.6,
+          "dist_min": 0.0,
+          "percorrido": 8.590767060187975,
+          "rmse_falha": 0.45384509560915837,
+          "rmse_fora": 0.1681640121279703,
+          "amostras": 1790
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 37.65,
+          "dist_min": 0.0,
+          "percorrido": 8.629991682128347,
+          "rmse_falha": 0.45597588982686826,
+          "rmse_fora": 0.1534697282685564,
+          "amostras": 1791
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 37.5,
+          "dist_min": 0.0,
+          "percorrido": 8.597796172320894,
+          "rmse_falha": 0.4604469316864018,
+          "rmse_fora": 0.16082229796760392,
+          "amostras": 1788
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 37.7,
+          "dist_min": 0.0,
+          "percorrido": 8.513927015644692,
+          "rmse_falha": 0.42209054374040156,
+          "rmse_fora": 0.15287114191526052,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 37.8,
+          "dist_min": 0.0,
+          "percorrido": 8.968293639699281,
+          "rmse_falha": 0.4486514169407362,
+          "rmse_fora": 0.15491407588412776,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 37.55,
+          "dist_min": 0.0,
+          "percorrido": 8.707147504542755,
+          "rmse_falha": 0.48320353611036454,
+          "rmse_fora": 0.151289553961996,
+          "amostras": 1785
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 38.15,
+          "dist_min": 0.0,
+          "percorrido": 8.547237037168811,
+          "rmse_falha": 0.42536303595323366,
+          "rmse_fora": 0.11374915030119725,
+          "amostras": 1792
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 37.75,
+          "dist_min": 0.0,
+          "percorrido": 8.531734837063548,
+          "rmse_falha": 0.43099471525211447,
+          "rmse_fora": 0.13742847893048604,
+          "amostras": 1790
+        }
+      },
+      "median": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.39926376938819885,
+          "percorrido": 15.158731440318856,
+          "rmse_falha": 0.10033112845213188,
+          "rmse_fora": 0.060654312623061236,
+          "amostras": 1791
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.29450902342796326,
+          "percorrido": 13.232132716865866,
+          "rmse_falha": 0.10357324132671382,
+          "rmse_fora": 0.16065398724054897,
+          "amostras": 1791
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.318983793258667,
+          "percorrido": 14.139536653843095,
+          "rmse_falha": 0.16683850556629812,
+          "rmse_fora": 0.06528077407753889,
+          "amostras": 1787
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3620446026325226,
+          "percorrido": 12.67279555778672,
+          "rmse_falha": 0.17221295918946672,
+          "rmse_fora": 0.13167042690580769,
+          "amostras": 1780
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3973713219165802,
+          "percorrido": 15.192692916011332,
+          "rmse_falha": 0.09879720074997766,
+          "rmse_fora": 0.0988481299609991,
+          "amostras": 1793
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3827665448188782,
+          "percorrido": 13.61572059531925,
+          "rmse_falha": 0.18440375651814242,
+          "rmse_fora": 0.1598303610733781,
+          "amostras": 1793
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3954980671405792,
+          "percorrido": 13.600160164887662,
+          "rmse_falha": 0.18365108892894957,
+          "rmse_fora": 0.18682385490371314,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3001213073730469,
+          "percorrido": 13.984953338645441,
+          "rmse_falha": 0.17388560004893475,
+          "rmse_fora": 0.06165141346489902,
+          "amostras": 1791
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2864043712615967,
+          "percorrido": 13.130840751880246,
+          "rmse_falha": 0.10176068792694318,
+          "rmse_fora": 0.15865715477189787,
+          "amostras": 1791
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3992319107055664,
+          "percorrido": 14.709466239822657,
+          "rmse_falha": 0.10768688846068321,
+          "rmse_fora": 0.06503211103678999,
+          "amostras": 1791
+        }
+      },
+      "ivw": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.25,
+          "dist_min": 0.0,
+          "percorrido": 8.442318706059787,
+          "rmse_falha": 1.1120523865778793,
+          "rmse_fora": 0.19052387230828588,
+          "amostras": 1788
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 36.25,
+          "dist_min": 0.0,
+          "percorrido": 8.436564634267842,
+          "rmse_falha": 1.42075211841938,
+          "rmse_fora": 0.20225478112082473,
+          "amostras": 1750
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 37.8,
+          "dist_min": 0.0,
+          "percorrido": 8.717499233472253,
+          "rmse_falha": 1.176790624931705,
+          "rmse_fora": 0.17678513206163468,
+          "amostras": 1783
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 36.5,
+          "dist_min": 0.0,
+          "percorrido": 9.208780749732448,
+          "rmse_falha": 1.3464025312785466,
+          "rmse_fora": 0.2040351709192378,
+          "amostras": 1761
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.2,
+          "dist_min": 0.0,
+          "percorrido": 9.13958443882509,
+          "rmse_falha": 1.1653320586029086,
+          "rmse_fora": 0.2000115706437329,
+          "amostras": 1788
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 9.052477118674503,
+          "rmse_falha": 1.0592179697479043,
+          "rmse_fora": 0.18105615943462924,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.45,
+          "dist_min": 0.0,
+          "percorrido": 9.05897561519041,
+          "rmse_falha": 1.1068935788956573,
+          "rmse_fora": 0.17512756874561125,
+          "amostras": 1788
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 9.16391758323971,
+          "rmse_falha": 1.0897525639323222,
+          "rmse_fora": 0.17655743785135164,
+          "amostras": 1791
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 38.25,
+          "dist_min": 0.0,
+          "percorrido": 9.19536137691663,
+          "rmse_falha": 1.1369712572211257,
+          "rmse_fora": 0.27863227762312076,
+          "amostras": 1791
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.45,
+          "dist_min": 0.0,
+          "percorrido": 9.227068154692686,
+          "rmse_falha": 1.1188184136379578,
+          "rmse_fora": 0.17179188655789254,
+          "amostras": 1791
+        }
+      },
+      "paraextrctr": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 8.571913152248806,
+          "rmse_falha": 0.6332388650559084,
+          "rmse_fora": 0.12281832330856135,
+          "amostras": 1792
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 38.8,
+          "dist_min": 0.0,
+          "percorrido": 8.546888777913647,
+          "rmse_falha": 0.6165190580495363,
+          "rmse_fora": 0.12801476274457005,
+          "amostras": 1791
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.3,
+          "dist_min": 0.0,
+          "percorrido": 8.989002060245237,
+          "rmse_falha": 0.6774152854205323,
+          "rmse_fora": 0.10981169072727949,
+          "amostras": 1793
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 38.25,
+          "dist_min": 0.0,
+          "percorrido": 9.216133074806699,
+          "rmse_falha": 0.6565752222955616,
+          "rmse_fora": 0.15524664454261666,
+          "amostras": 1790
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.2,
+          "dist_min": 0.0,
+          "percorrido": 9.170785290844087,
+          "rmse_falha": 0.6460413527447696,
+          "rmse_fora": 0.17983296561763734,
+          "amostras": 1792
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 8.747583690810757,
+          "rmse_falha": 0.6029213306738704,
+          "rmse_fora": 0.13697383174412833,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.45,
+          "dist_min": 0.0,
+          "percorrido": 8.511642428611308,
+          "rmse_falha": 0.6552604013969967,
+          "rmse_fora": 0.08767844396698879,
+          "amostras": 1788
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.35,
+          "dist_min": 0.0,
+          "percorrido": 9.008374987893621,
+          "rmse_falha": 0.6626497676071273,
+          "rmse_fora": 0.15187658137149032,
+          "amostras": 1790
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 8.656729102153095,
+          "rmse_falha": 0.6336742304741437,
+          "rmse_fora": 0.15854517422162862,
+          "amostras": 1785
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 8.647433011994572,
+          "rmse_falha": 0.6154383160630597,
+          "rmse_fora": 0.12891323822741854,
+          "amostras": 1789
+        }
+      },
+      "kf_chi2": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.1,
+          "dist_min": 0.0,
+          "percorrido": 8.697782801417747,
+          "rmse_falha": 1.3979191697686828,
+          "rmse_fora": 0.2144840154295357,
+          "amostras": 1788,
+          "deteccao": 0.0,
+          "falso_alarme": 0.05630630630630631
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 38.3,
+          "dist_min": 0.0,
+          "percorrido": 8.580772724637896,
+          "rmse_falha": 1.4268538470278729,
+          "rmse_fora": 0.20441829447522658,
+          "amostras": 1792,
+          "deteccao": 0.0,
+          "falso_alarme": 0.05493273542600897
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.35,
+          "dist_min": 0.0,
+          "percorrido": 8.477011025090631,
+          "rmse_falha": 1.3850215964976074,
+          "rmse_fora": 0.17657260568671795,
+          "amostras": 1792,
+          "deteccao": 0.0,
+          "falso_alarme": 0.05829596412556054
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 38.1,
+          "dist_min": 0.0,
+          "percorrido": 8.71628918371322,
+          "rmse_falha": 1.4030028503469494,
+          "rmse_fora": 0.28456384790172995,
+          "amostras": 1790,
+          "deteccao": 0.0,
+          "falso_alarme": 0.060674157303370786
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.45,
+          "dist_min": 0.0,
+          "percorrido": 8.697259035579192,
+          "rmse_falha": 1.3385376889962475,
+          "rmse_fora": 0.2679161179800489,
+          "amostras": 1791,
+          "deteccao": 0.0,
+          "falso_alarme": 0.05948372615039282
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.25,
+          "dist_min": 0.0,
+          "percorrido": 9.054652962211723,
+          "rmse_falha": 1.388136712885491,
+          "rmse_fora": 0.1670718232507136,
+          "amostras": 1791,
+          "deteccao": 0.0,
+          "falso_alarme": 0.06060606060606061
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 8.703658356222856,
+          "rmse_falha": 1.3788662049006062,
+          "rmse_fora": 0.21475446353866312,
+          "amostras": 1790,
+          "deteccao": 0.0,
+          "falso_alarme": 0.060674157303370786
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 8.567053072691966,
+          "rmse_falha": 1.3441186200131188,
+          "rmse_fora": 0.26326111661195795,
+          "amostras": 1789,
+          "deteccao": 0.0,
+          "falso_alarme": 0.0562429696287964
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 38.15,
+          "dist_min": 0.0,
+          "percorrido": 9.199523843547496,
+          "rmse_falha": 1.4331266416729562,
+          "rmse_fora": 0.223107255002272,
+          "amostras": 1791,
+          "deteccao": 0.0,
+          "falso_alarme": 0.06060606060606061
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.7,
+          "dist_min": 0.0,
+          "percorrido": 8.61619602998031,
+          "rmse_falha": 1.3438796630779652,
+          "rmse_fora": 0.23066930003705433,
+          "amostras": 1793,
+          "deteccao": 0.0,
+          "falso_alarme": 0.05039193729003359
+        }
+      }
+    },
+    "S2_picos": {
+      "pal2v": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.39572787284851074,
+          "percorrido": 12.485855059559057,
+          "rmse_falha": 0.1715502349412737,
+          "rmse_fora": 0.18699792203307697,
+          "amostras": 1789,
+          "deteccao": 0.16333333333333333,
+          "falso_alarme": 0.03262092238470191
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2965908944606781,
+          "percorrido": 13.12499394607775,
+          "rmse_falha": 0.18171388985502246,
+          "rmse_fora": 0.19081007091643337,
+          "amostras": 1792,
+          "deteccao": 0.20555555555555555,
+          "falso_alarme": 0.04484304932735426
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3576522171497345,
+          "percorrido": 12.6328133127126,
+          "rmse_falha": 0.19598034090681357,
+          "rmse_fora": 0.19013200113081952,
+          "amostras": 1792,
+          "deteccao": 0.21222222222222223,
+          "falso_alarme": 0.032511210762331835
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3160383105278015,
+          "percorrido": 12.625809896945604,
+          "rmse_falha": 0.2079101318261104,
+          "rmse_fora": 0.17014266559532434,
+          "amostras": 1785,
+          "deteccao": 0.18555555555555556,
+          "falso_alarme": 0.0327683615819209
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4057951271533966,
+          "percorrido": 13.263160941122809,
+          "rmse_falha": 0.1945140603622064,
+          "rmse_fora": 0.21308099683034784,
+          "amostras": 1791,
+          "deteccao": 0.19,
+          "falso_alarme": 0.04152637485970819
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.29880020022392273,
+          "percorrido": 12.571910524729695,
+          "rmse_falha": 0.15903581489138077,
+          "rmse_fora": 0.18063638563318274,
+          "amostras": 1792,
+          "deteccao": 0.18444444444444444,
+          "falso_alarme": 0.03699551569506727
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.31217160820961,
+          "percorrido": 12.844576078832299,
+          "rmse_falha": 0.19738893652079323,
+          "rmse_fora": 0.21247655154253434,
+          "amostras": 1791,
+          "deteccao": 0.1922222222222222,
+          "falso_alarme": 0.04489337822671156
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.39780107140541077,
+          "percorrido": 13.287558949062417,
+          "rmse_falha": 0.17805641378089138,
+          "rmse_fora": 0.21067997981255077,
+          "amostras": 1787,
+          "deteccao": 0.2111111111111111,
+          "falso_alarme": 0.046223224351747465
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3515682816505432,
+          "percorrido": 12.574243876194709,
+          "rmse_falha": 0.19732087339386314,
+          "rmse_fora": 0.18554920713144363,
+          "amostras": 1790,
+          "deteccao": 0.2288888888888889,
+          "falso_alarme": 0.03932584269662921
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.374960333108902,
+          "percorrido": 12.441268494645499,
+          "rmse_falha": 0.19844438839059925,
+          "rmse_fora": 0.18734679865559073,
+          "amostras": 1791,
+          "deteccao": 0.16555555555555557,
+          "falso_alarme": 0.03479236812570146
+        }
+      },
+      "mean": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.35092678666114807,
+          "percorrido": 13.197651463159627,
+          "rmse_falha": 0.21949710898326874,
+          "rmse_fora": 0.15813906962300558,
+          "amostras": 1767
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4192500412464142,
+          "percorrido": 13.540924684600292,
+          "rmse_falha": 0.2310652420391338,
+          "rmse_fora": 0.0762376363082562,
+          "amostras": 1791
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.41799047589302063,
+          "percorrido": 14.410637901527851,
+          "rmse_falha": 0.14121244563394733,
+          "rmse_fora": 0.07752186450188388,
+          "amostras": 1790
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.35062122344970703,
+          "percorrido": 13.845705965536409,
+          "rmse_falha": 0.19425749830990166,
+          "rmse_fora": 0.07889062742279813,
+          "amostras": 1783
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.39263877272605896,
+          "percorrido": 13.091169278913178,
+          "rmse_falha": 0.21265324257896775,
+          "rmse_fora": 0.07706478165301628,
+          "amostras": 1779
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4239807724952698,
+          "percorrido": 13.450939681276594,
+          "rmse_falha": 0.21074927924256154,
+          "rmse_fora": 0.16134365302765613,
+          "amostras": 1791
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.35876691341400146,
+          "percorrido": 13.385397331109093,
+          "rmse_falha": 0.23114337893606726,
+          "rmse_fora": 0.0737538937519097,
+          "amostras": 1791
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2804894745349884,
+          "percorrido": 12.58384732872331,
+          "rmse_falha": 0.18637042224346467,
+          "rmse_fora": 0.16803221806649324,
+          "amostras": 1792
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.40966689586639404,
+          "percorrido": 14.357351595565206,
+          "rmse_falha": 0.18309540856262296,
+          "rmse_fora": 0.05683597819520991,
+          "amostras": 1791
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.418519526720047,
+          "percorrido": 13.233992831790072,
+          "rmse_falha": 0.20000642672198096,
+          "rmse_fora": 0.12623038332118777,
+          "amostras": 1790
+        }
+      },
+      "median": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38418328762054443,
+          "percorrido": 13.012158656136823,
+          "rmse_falha": 0.17545668295217412,
+          "rmse_fora": 0.18536083265141434,
+          "amostras": 1789
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3618427515029907,
+          "percorrido": 13.52346553241274,
+          "rmse_falha": 0.15592452288054653,
+          "rmse_fora": 0.11155417383743137,
+          "amostras": 1790
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.40346166491508484,
+          "percorrido": 13.121142334068946,
+          "rmse_falha": 0.17805547022542986,
+          "rmse_fora": 0.1387520634088334,
+          "amostras": 1792
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3940725326538086,
+          "percorrido": 13.1559606263986,
+          "rmse_falha": 0.17815636138942628,
+          "rmse_fora": 0.15719865450667084,
+          "amostras": 1747
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.29224610328674316,
+          "percorrido": 12.797771262504043,
+          "rmse_falha": 0.0878379373612468,
+          "rmse_fora": 0.15906325490061377,
+          "amostras": 1783
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4082942605018616,
+          "percorrido": 13.548296034190951,
+          "rmse_falha": 0.1835567598042982,
+          "rmse_fora": 0.08343875110571904,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3484676778316498,
+          "percorrido": 13.390519412691006,
+          "rmse_falha": 0.17607408679873413,
+          "rmse_fora": 0.1852536839325808,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.29496660828590393,
+          "percorrido": 13.297734116674981,
+          "rmse_falha": 0.08742254661138747,
+          "rmse_fora": 0.18479001577443083,
+          "amostras": 1791
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.34593093395233154,
+          "percorrido": 13.042161752843349,
+          "rmse_falha": 0.16136750834530939,
+          "rmse_fora": 0.1764563550134743,
+          "amostras": 1788
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.31692278385162354,
+          "percorrido": 13.239379669825981,
+          "rmse_falha": 0.163163944134395,
+          "rmse_fora": 0.18027166033711353,
+          "amostras": 1790
+        }
+      },
+      "ivw": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3843781054019928,
+          "percorrido": 15.29159966538374,
+          "rmse_falha": 0.31823841677110987,
+          "rmse_fora": 0.12159273809067496,
+          "amostras": 1791
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3671247959136963,
+          "percorrido": 13.400288598385586,
+          "rmse_falha": 0.40563045928446223,
+          "rmse_fora": 0.09231644462153937,
+          "amostras": 1785
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3823987543582916,
+          "percorrido": 14.903148217409855,
+          "rmse_falha": 0.317431101448746,
+          "rmse_fora": 0.1326472800654345,
+          "amostras": 1791
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.39621493220329285,
+          "percorrido": 15.242977028280814,
+          "rmse_falha": 0.36920171161672166,
+          "rmse_fora": 0.09013260035189857,
+          "amostras": 1787
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3922290503978729,
+          "percorrido": 15.326712417746084,
+          "rmse_falha": 0.35337198953949145,
+          "rmse_fora": 0.08488919153425283,
+          "amostras": 1790
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3750860095024109,
+          "percorrido": 13.947895009580915,
+          "rmse_falha": 0.3190647610025764,
+          "rmse_fora": 0.08257145720448354,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3962007462978363,
+          "percorrido": 15.066880857552485,
+          "rmse_falha": 0.2895107627009747,
+          "rmse_fora": 0.12088601840349343,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38120564818382263,
+          "percorrido": 15.144023641810492,
+          "rmse_falha": 0.3512462374428767,
+          "rmse_fora": 0.11168798200044812,
+          "amostras": 1790
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3015434741973877,
+          "percorrido": 13.718356652809506,
+          "rmse_falha": 0.39576425967991335,
+          "rmse_fora": 0.10837666264520394,
+          "amostras": 1787
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3985918164253235,
+          "percorrido": 14.45684955607775,
+          "rmse_falha": 0.29192133932432457,
+          "rmse_fora": 0.12023749962162908,
+          "amostras": 1782
+        }
+      },
+      "paraextrctr": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.417237251996994,
+          "percorrido": 14.582392585725,
+          "rmse_falha": 0.12082874895620913,
+          "rmse_fora": 0.08026094336132783,
+          "amostras": 1789
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3951915502548218,
+          "percorrido": 14.55089684651989,
+          "rmse_falha": 0.17427765098216144,
+          "rmse_fora": 0.12099876532872338,
+          "amostras": 1792
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3580191731452942,
+          "percorrido": 13.045042420177428,
+          "rmse_falha": 0.1872018782019099,
+          "rmse_fora": 0.19082330666023178,
+          "amostras": 1791
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.39511537551879883,
+          "percorrido": 14.170221489564494,
+          "rmse_falha": 0.17746867281027914,
+          "rmse_fora": 0.06777215439552332,
+          "amostras": 1789
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.29068902134895325,
+          "percorrido": 12.684692293579662,
+          "rmse_falha": 0.16284145104636405,
+          "rmse_fora": 0.1466300558678446,
+          "amostras": 1792
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38884875178337097,
+          "percorrido": 13.041046172736406,
+          "rmse_falha": 0.18629897363042147,
+          "rmse_fora": 0.16047358699892236,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3143536448478699,
+          "percorrido": 13.046362094701347,
+          "rmse_falha": 0.2016842219662768,
+          "rmse_fora": 0.18417536664880105,
+          "amostras": 1789
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3041086196899414,
+          "percorrido": 12.638260977890816,
+          "rmse_falha": 0.1911222555058495,
+          "rmse_fora": 0.17474427598122025,
+          "amostras": 1788
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.28188788890838623,
+          "percorrido": 13.121726349886288,
+          "rmse_falha": 0.22236135846607538,
+          "rmse_fora": 0.09499842357144939,
+          "amostras": 1786
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3871423006057739,
+          "percorrido": 13.23567638168102,
+          "rmse_falha": 0.19452331761722416,
+          "rmse_fora": 0.1444001301946807,
+          "amostras": 1790
+        }
+      },
+      "kf_chi2": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.31801316142082214,
+          "percorrido": 12.858579526452704,
+          "rmse_falha": 0.19680598735582105,
+          "rmse_fora": 0.26546996101232706,
+          "amostras": 1791,
+          "deteccao": 0.15888888888888889,
+          "falso_alarme": 0.06509539842873176
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2962319850921631,
+          "percorrido": 12.404004439239205,
+          "rmse_falha": 0.2358168945599007,
+          "rmse_fora": 0.25525432709720636,
+          "amostras": 1791,
+          "deteccao": 0.15,
+          "falso_alarme": 0.050505050505050504
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38874882459640503,
+          "percorrido": 12.859872283766876,
+          "rmse_falha": 0.2102819805993164,
+          "rmse_fora": 0.27504073113969246,
+          "amostras": 1792,
+          "deteccao": 0.19444444444444445,
+          "falso_alarme": 0.06053811659192825
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3249368667602539,
+          "percorrido": 12.228846370858546,
+          "rmse_falha": 0.27897632566982994,
+          "rmse_fora": 0.26947957141244516,
+          "amostras": 1792,
+          "deteccao": 0.18222222222222223,
+          "falso_alarme": 0.07511210762331838
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38759368658065796,
+          "percorrido": 12.724374412294917,
+          "rmse_falha": 0.23756974035972753,
+          "rmse_fora": 0.19927777177352796,
+          "amostras": 1791,
+          "deteccao": 0.1711111111111111,
+          "falso_alarme": 0.04713804713804714
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3722837269306183,
+          "percorrido": 12.37673712246898,
+          "rmse_falha": 0.24285264233182088,
+          "rmse_fora": 0.2785636098070226,
+          "amostras": 1791,
+          "deteccao": 0.15888888888888889,
+          "falso_alarme": 0.051627384960718295
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.364195853471756,
+          "percorrido": 12.29561886652672,
+          "rmse_falha": 0.269929716293881,
+          "rmse_fora": 0.24927484196157865,
+          "amostras": 1778,
+          "deteccao": 0.15222222222222223,
+          "falso_alarme": 0.05239179954441914
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2862270474433899,
+          "percorrido": 12.748072984338929,
+          "rmse_falha": 0.11940082360427302,
+          "rmse_fora": 0.2478031855705203,
+          "amostras": 1791,
+          "deteccao": 0.17222222222222222,
+          "falso_alarme": 0.05387205387205387
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38909098505973816,
+          "percorrido": 12.178558374022064,
+          "rmse_falha": 0.27016784124377535,
+          "rmse_fora": 0.2465239391796039,
+          "amostras": 1791,
+          "deteccao": 0.17888888888888888,
+          "falso_alarme": 0.050505050505050504
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 2.8920841217041016,
+          "percorrido": 0.0,
+          "rmse_falha": 0.01855346586944157,
+          "rmse_fora": 0.018093470152805945,
+          "amostras": 1763,
+          "deteccao": 0.07555555555555556,
+          "falso_alarme": 0.0
+        }
+      }
+    },
+    "S3_deriva": {
+      "pal2v": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3994190990924835,
+          "percorrido": 15.055765738411685,
+          "rmse_falha": 0.08955254945175489,
+          "rmse_fora": 0.06905097095840156,
+          "amostras": 1771,
+          "deteccao": 0.9655555555555555,
+          "falso_alarme": 0.03903559127439724
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4099668562412262,
+          "percorrido": 13.23117175487056,
+          "rmse_falha": 0.21263833241109106,
+          "rmse_fora": 0.12056591679582358,
+          "amostras": 1792,
+          "deteccao": 0.9622222222222222,
+          "falso_alarme": 0.03811659192825112
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.33105385303497314,
+          "percorrido": 12.975030271589844,
+          "rmse_falha": 0.18893094505128177,
+          "rmse_fora": 0.18813628485886558,
+          "amostras": 1793,
+          "deteccao": 0.9611111111111111,
+          "falso_alarme": 0.05263157894736842
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.36152610182762146,
+          "percorrido": 13.88501078356693,
+          "rmse_falha": 0.15606444206324785,
+          "rmse_fora": 0.09237485494872878,
+          "amostras": 1783,
+          "deteccao": 0.9644444444444444,
+          "falso_alarme": 0.045300113250283124
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2808222770690918,
+          "percorrido": 12.88278514395935,
+          "rmse_falha": 0.19210863236568143,
+          "rmse_fora": 0.17536558620013692,
+          "amostras": 1790,
+          "deteccao": 0.9588431590656284,
+          "falso_alarme": 0.03367003367003367
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4263651371002197,
+          "percorrido": 13.30566166468127,
+          "rmse_falha": 0.20156280656045406,
+          "rmse_fora": 0.14939369716197046,
+          "amostras": 1791,
+          "deteccao": 0.9633333333333334,
+          "falso_alarme": 0.03928170594837262
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4080125689506531,
+          "percorrido": 13.374897687180727,
+          "rmse_falha": 0.21199098685790943,
+          "rmse_fora": 0.19382060525708797,
+          "amostras": 1791,
+          "deteccao": 0.9622222222222222,
+          "falso_alarme": 0.03591470258136925
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4072692394256592,
+          "percorrido": 14.612674922346194,
+          "rmse_falha": 0.056867076892183434,
+          "rmse_fora": 0.08895177825337647,
+          "amostras": 1790,
+          "deteccao": 0.9655555555555555,
+          "falso_alarme": 0.0348314606741573
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3779277801513672,
+          "percorrido": 13.18393097309795,
+          "rmse_falha": 0.19248102582487242,
+          "rmse_fora": 0.18947143996573187,
+          "amostras": 1789,
+          "deteccao": 0.9677777777777777,
+          "falso_alarme": 0.05399325084364454
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4087635576725006,
+          "percorrido": 13.533931445276401,
+          "rmse_falha": 0.20689699868195138,
+          "rmse_fora": 0.08564523457377288,
+          "amostras": 1792,
+          "deteccao": 0.9622222222222222,
+          "falso_alarme": 0.04035874439461883
+        }
+      },
+      "mean": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.25,
+          "dist_min": 0.0,
+          "percorrido": 8.689651937941932,
+          "rmse_falha": 1.0506522533917555,
+          "rmse_fora": 0.14988130187292056,
+          "amostras": 1782
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 38.7,
+          "dist_min": 0.0,
+          "percorrido": 8.930687811406239,
+          "rmse_falha": 1.0513026600411366,
+          "rmse_fora": 0.1257577566530433,
+          "amostras": 1789
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 8.721524172969591,
+          "rmse_falha": 1.0506667189891137,
+          "rmse_fora": 0.1559518865927582,
+          "amostras": 1791
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 37.45,
+          "dist_min": 0.0,
+          "percorrido": 9.054153939789828,
+          "rmse_falha": 1.0504710976418417,
+          "rmse_fora": 0.14036918397120135,
+          "amostras": 1772
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.4,
+          "dist_min": 0.0,
+          "percorrido": 8.740768794049616,
+          "rmse_falha": 1.05015236629639,
+          "rmse_fora": 0.13702023172901853,
+          "amostras": 1792
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 9.070173392813118,
+          "rmse_falha": 1.0491917619550237,
+          "rmse_fora": 0.15708939602461205,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 9.142829480225192,
+          "rmse_falha": 1.0516699895376451,
+          "rmse_fora": 0.12327968309526251,
+          "amostras": 1790
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.4,
+          "dist_min": 0.0,
+          "percorrido": 8.677118996938285,
+          "rmse_falha": 1.049729930418422,
+          "rmse_fora": 0.16013591103486413,
+          "amostras": 1790
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 38.8,
+          "dist_min": 0.0,
+          "percorrido": 8.781436579264286,
+          "rmse_falha": 1.0524960078014898,
+          "rmse_fora": 0.14065297719573094,
+          "amostras": 1791
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 8.979269957606055,
+          "rmse_falha": 1.0505762329727557,
+          "rmse_fora": 0.1298604796950387,
+          "amostras": 1791
+        }
+      },
+      "median": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4012088179588318,
+          "percorrido": 15.320196738843105,
+          "rmse_falha": 0.07555238350593803,
+          "rmse_fora": 0.06229953767959117,
+          "amostras": 1790
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.29578089714050293,
+          "percorrido": 13.131314218029278,
+          "rmse_falha": 0.14932902575752907,
+          "rmse_fora": 0.17229523330282281,
+          "amostras": 1787
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.38001033663749695,
+          "percorrido": 14.118110696022633,
+          "rmse_falha": 0.1692866918391472,
+          "rmse_fora": 0.09001335464108592,
+          "amostras": 1792
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.34319865703582764,
+          "percorrido": 13.748594394856848,
+          "rmse_falha": 0.17041836229062599,
+          "rmse_fora": 0.10272903615571369,
+          "amostras": 1789
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.40717265009880066,
+          "percorrido": 15.219091519029787,
+          "rmse_falha": 0.11723947390140539,
+          "rmse_fora": 0.10639449030048177,
+          "amostras": 1793
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3994590640068054,
+          "percorrido": 15.271108754976291,
+          "rmse_falha": 0.07746487761726918,
+          "rmse_fora": 0.0703152652884428,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2850671708583832,
+          "percorrido": 13.314708052585662,
+          "rmse_falha": 0.132229235235934,
+          "rmse_fora": 0.05898691639124774,
+          "amostras": 1786
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2878527045249939,
+          "percorrido": 13.203519087847706,
+          "rmse_falha": 0.1047644933694773,
+          "rmse_fora": 0.18505007010274802,
+          "amostras": 1786
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.28154534101486206,
+          "percorrido": 12.931973297816834,
+          "rmse_falha": 0.17490713475782363,
+          "rmse_fora": 0.07957211813233146,
+          "amostras": 1789
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3382461965084076,
+          "percorrido": 13.433811895710619,
+          "rmse_falha": 0.1713002959126599,
+          "rmse_fora": 0.1786768135008227,
+          "amostras": 1789
+        }
+      },
+      "ivw": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 8.698869997145916,
+          "rmse_falha": 2.545583220913194,
+          "rmse_fora": 0.20975780044147196,
+          "amostras": 1787
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 38.7,
+          "dist_min": 0.0,
+          "percorrido": 8.602399341162457,
+          "rmse_falha": 2.5472305135047204,
+          "rmse_fora": 0.17848218012951234,
+          "amostras": 1789
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.15,
+          "dist_min": 0.0,
+          "percorrido": 9.158795722684527,
+          "rmse_falha": 2.546315003159074,
+          "rmse_fora": 0.18288281400745193,
+          "amostras": 1789
+        },
+        "3": {
+          "colisoes": 1,
+          "t_contato": 38.3,
+          "dist_min": 0.0,
+          "percorrido": 8.607713736288678,
+          "rmse_falha": 2.545096737880762,
+          "rmse_fora": 0.27628948219880806,
+          "amostras": 1791
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 9.042430320242744,
+          "rmse_falha": 2.545820484429578,
+          "rmse_fora": 0.21315373154856104,
+          "amostras": 1793
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 9.054494014306204,
+          "rmse_falha": 2.5448014897727393,
+          "rmse_fora": 0.22274612784173609,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 9.186495632816051,
+          "rmse_falha": 2.5461916765441397,
+          "rmse_fora": 0.3109767518280474,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.45,
+          "dist_min": 0.0,
+          "percorrido": 9.046898656514955,
+          "rmse_falha": 2.5449093344231675,
+          "rmse_fora": 0.222586466379801,
+          "amostras": 1789
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 38.05,
+          "dist_min": 0.0,
+          "percorrido": 9.056475801296287,
+          "rmse_falha": 2.5451773478239184,
+          "rmse_fora": 0.2230766400597161,
+          "amostras": 1787
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.45,
+          "dist_min": 0.0,
+          "percorrido": 9.085138787101124,
+          "rmse_falha": 2.5440440042011736,
+          "rmse_fora": 0.20135866698404176,
+          "amostras": 1791
+        }
+      },
+      "paraextrctr": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.3,
+          "dist_min": 0.0,
+          "percorrido": 9.000102621774527,
+          "rmse_falha": 1.1303674658000025,
+          "rmse_fora": 0.11215834420656681,
+          "amostras": 1786
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 39.2,
+          "dist_min": 0.0,
+          "percorrido": 8.886983373660284,
+          "rmse_falha": 1.1321044720481743,
+          "rmse_fora": 0.12951850235874335,
+          "amostras": 1791
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 9.038272468235846,
+          "rmse_falha": 1.1292686711109112,
+          "rmse_fora": 0.14952677778881998,
+          "amostras": 1790
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 9.040613972027405,
+          "rmse_falha": 1.1291212368946553,
+          "rmse_fora": 0.12917803732316102,
+          "amostras": 1793
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 9.186011757577253,
+          "rmse_falha": 1.1289972857687427,
+          "rmse_fora": 0.1705618983236975,
+          "amostras": 1791
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.95,
+          "dist_min": 0.0,
+          "percorrido": 9.216892334320558,
+          "rmse_falha": 1.1282923754085146,
+          "rmse_fora": 0.13837571273065355,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 9.172146165253569,
+          "rmse_falha": 1.1295281727770827,
+          "rmse_fora": 0.18721584882372502,
+          "amostras": 1791
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.35,
+          "dist_min": 0.0,
+          "percorrido": 8.594765949750256,
+          "rmse_falha": 1.1262441128182759,
+          "rmse_fora": 0.16420736138644648,
+          "amostras": 1789
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 8.592492321312834,
+          "rmse_falha": 1.1272903659869098,
+          "rmse_fora": 0.16592569110220257,
+          "amostras": 1786
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 39.0,
+          "dist_min": 0.0,
+          "percorrido": 8.920036926657458,
+          "rmse_falha": 1.1320731942862425,
+          "rmse_fora": 0.11551128545483068,
+          "amostras": 1791
+        }
+      },
+      "kf_chi2": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.4,
+          "dist_min": 0.0,
+          "percorrido": 9.244234289556795,
+          "rmse_falha": 3.1046982284606806,
+          "rmse_fora": 0.29875837548428213,
+          "amostras": 1792,
+          "deteccao": 0.0011111111111111111,
+          "falso_alarme": 0.08520179372197309
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 38.4,
+          "dist_min": 0.0,
+          "percorrido": 9.196032600941871,
+          "rmse_falha": 3.1058638934979554,
+          "rmse_fora": 0.3080986709861142,
+          "amostras": 1791,
+          "deteccao": 0.0044444444444444444,
+          "falso_alarme": 0.05611672278338945
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.1,
+          "dist_min": 0.0,
+          "percorrido": 8.721672056938253,
+          "rmse_falha": 3.1036389843462757,
+          "rmse_fora": 0.29326386098833,
+          "amostras": 1792,
+          "deteccao": 0.0022222222222222222,
+          "falso_alarme": 0.05493273542600897
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 38.8,
+          "dist_min": 0.0,
+          "percorrido": 8.544247865166849,
+          "rmse_falha": 3.1059575293443533,
+          "rmse_fora": 0.28716312608798644,
+          "amostras": 1791,
+          "deteccao": 0.0033333333333333335,
+          "falso_alarme": 0.058361391694725026
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 9.1440384605004,
+          "rmse_falha": 3.1046461933313827,
+          "rmse_fora": 0.2955267466357706,
+          "amostras": 1791,
+          "deteccao": 0.0033333333333333335,
+          "falso_alarme": 0.05948372615039282
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.8,
+          "dist_min": 0.0,
+          "percorrido": 9.197367412683521,
+          "rmse_falha": 3.1055868924487497,
+          "rmse_fora": 0.30972957544344504,
+          "amostras": 1792,
+          "deteccao": 0.0044444444444444444,
+          "falso_alarme": 0.05829596412556054
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 8.603155115282128,
+          "rmse_falha": 3.106374156524392,
+          "rmse_fora": 0.27924554364234305,
+          "amostras": 1792,
+          "deteccao": 0.0033333333333333335,
+          "falso_alarme": 0.053811659192825115
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.35,
+          "dist_min": 0.0,
+          "percorrido": 8.54902617578965,
+          "rmse_falha": 3.1044956431534207,
+          "rmse_fora": 0.2834910485950854,
+          "amostras": 1784,
+          "deteccao": 0.006666666666666667,
+          "falso_alarme": 0.05656108597285068
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 39.3,
+          "dist_min": 0.0,
+          "percorrido": 8.578507872995404,
+          "rmse_falha": 3.1070573695550308,
+          "rmse_fora": 0.27681381093947977,
+          "amostras": 1792,
+          "deteccao": 0.01,
+          "falso_alarme": 0.05605381165919283
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.95,
+          "dist_min": 0.0,
+          "percorrido": 8.51372202393677,
+          "rmse_falha": 3.106832590666198,
+          "rmse_fora": 0.279265120328644,
+          "amostras": 1791,
+          "deteccao": 0.005555555555555556,
+          "falso_alarme": 0.05948372615039282
+        }
+      }
+    },
+    "S4_dropout": {
+      "pal2v": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.36232879757881165,
+          "percorrido": 13.713207157075637,
+          "rmse_falha": 0.18649795749440806,
+          "rmse_fora": 0.098282103821483,
+          "amostras": 1778,
+          "deteccao": 0.9922222222222222,
+          "falso_alarme": 0.04555808656036447
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4091009795665741,
+          "percorrido": 13.452118751376375,
+          "rmse_falha": 0.20964389846144524,
+          "rmse_fora": 0.0761687925798054,
+          "amostras": 1787,
+          "deteccao": 0.9922222222222222,
+          "falso_alarme": 0.040586245772266064
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.32017195224761963,
+          "percorrido": 13.543542377942542,
+          "rmse_falha": 0.18717561194236101,
+          "rmse_fora": 0.09888236488158177,
+          "amostras": 1792,
+          "deteccao": 0.9933333333333333,
+          "falso_alarme": 0.04484304932735426
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.16579486429691315,
+          "percorrido": 13.066482609402339,
+          "rmse_falha": 0.23010208015713074,
+          "rmse_fora": 0.11289709160703436,
+          "amostras": 1789,
+          "deteccao": 0.9911111111111112,
+          "falso_alarme": 0.03487064116985377
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4317278265953064,
+          "percorrido": 15.105691945130392,
+          "rmse_falha": 0.1273740406835874,
+          "rmse_fora": 0.06342005265338724,
+          "amostras": 1778,
+          "deteccao": 0.9955555555555555,
+          "falso_alarme": 0.03302961275626424
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.36510196328163147,
+          "percorrido": 12.678293092482974,
+          "rmse_falha": 0.1903394561857965,
+          "rmse_fora": 0.19895005005871189,
+          "amostras": 1792,
+          "deteccao": 0.9933333333333333,
+          "falso_alarme": 0.03923766816143498
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4074960947036743,
+          "percorrido": 13.50559141110239,
+          "rmse_falha": 0.21414096334788144,
+          "rmse_fora": 0.1282942726063625,
+          "amostras": 1791,
+          "deteccao": 0.9922222222222222,
+          "falso_alarme": 0.03479236812570146
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.35241955518722534,
+          "percorrido": 13.331685562808055,
+          "rmse_falha": 0.19085469938840482,
+          "rmse_fora": 0.2128399904890729,
+          "amostras": 1791,
+          "deteccao": 0.9944444444444445,
+          "falso_alarme": 0.04826038159371493
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.27825087308883667,
+          "percorrido": 12.883067386758267,
+          "rmse_falha": 0.18989001374584766,
+          "rmse_fora": 0.1715026989972055,
+          "amostras": 1794,
+          "deteccao": 0.9944444444444445,
+          "falso_alarme": 0.07046979865771812
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4099465310573578,
+          "percorrido": 13.113991602135137,
+          "rmse_falha": 0.1893808622100774,
+          "rmse_fora": 0.21056442287354862,
+          "amostras": 1792,
+          "deteccao": 0.9944444444444445,
+          "falso_alarme": 0.05493273542600897
+        }
+      },
+      "mean": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 8.659374719038933,
+          "rmse_falha": 1.1444393757601867,
+          "rmse_fora": 0.15923749759967326,
+          "amostras": 1789
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 39.35,
+          "dist_min": 0.0,
+          "percorrido": 8.841248683013847,
+          "rmse_falha": 1.1539879995503415,
+          "rmse_fora": 0.11389849349665813,
+          "amostras": 1783
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.7,
+          "dist_min": 0.0,
+          "percorrido": 9.115592392611667,
+          "rmse_falha": 1.1465124239339368,
+          "rmse_fora": 0.16630856676027386,
+          "amostras": 1790
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 8.765431047288626,
+          "rmse_falha": 1.1436809034124453,
+          "rmse_fora": 0.1582327419775173,
+          "amostras": 1791
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 9.064598449112935,
+          "rmse_falha": 1.1435127982812203,
+          "rmse_fora": 0.1660703038769622,
+          "amostras": 1792
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 39.0,
+          "dist_min": 0.0,
+          "percorrido": 8.76775973898384,
+          "rmse_falha": 1.1486504192760643,
+          "rmse_fora": 0.16827652267045803,
+          "amostras": 1791
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 8.662127453063867,
+          "rmse_falha": 1.1454774323480972,
+          "rmse_fora": 0.1619608110851346,
+          "amostras": 1791
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.4,
+          "dist_min": 0.0,
+          "percorrido": 8.802117192901685,
+          "rmse_falha": 1.1409097427782569,
+          "rmse_fora": 0.15818786108692612,
+          "amostras": 1789
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 39.25,
+          "dist_min": 0.0,
+          "percorrido": 8.95141407128368,
+          "rmse_falha": 1.1510371833764421,
+          "rmse_fora": 0.1345794280798844,
+          "amostras": 1791
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.95,
+          "dist_min": 0.0,
+          "percorrido": 9.086985667760045,
+          "rmse_falha": 1.148027350122747,
+          "rmse_fora": 0.14422313003788897,
+          "amostras": 1791
+        }
+      },
+      "median": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3993784785270691,
+          "percorrido": 15.18786908580594,
+          "rmse_falha": 0.10353658002040463,
+          "rmse_fora": 0.0624524551710362,
+          "amostras": 1791
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3275785744190216,
+          "percorrido": 13.137913218362808,
+          "rmse_falha": 0.1532872779832622,
+          "rmse_fora": 0.17157837222678657,
+          "amostras": 1786
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3437938392162323,
+          "percorrido": 14.857217698909704,
+          "rmse_falha": 0.10249065874308337,
+          "rmse_fora": 0.11172584409194299,
+          "amostras": 1792
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.39380642771720886,
+          "percorrido": 13.429151707232995,
+          "rmse_falha": 0.18936426310232646,
+          "rmse_fora": 0.14618268883664734,
+          "amostras": 1782
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3831225633621216,
+          "percorrido": 13.708267474746698,
+          "rmse_falha": 0.15820470092856195,
+          "rmse_fora": 0.10024476155958473,
+          "amostras": 1791
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3258865177631378,
+          "percorrido": 13.099242372310687,
+          "rmse_falha": 0.14961148157823256,
+          "rmse_fora": 0.17082288143792057,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4044555127620697,
+          "percorrido": 15.23635241021373,
+          "rmse_falha": 0.12646957870721665,
+          "rmse_fora": 0.06366181088245094,
+          "amostras": 1791
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.2946072518825531,
+          "percorrido": 13.667451710994325,
+          "rmse_falha": 0.17716932421275391,
+          "rmse_fora": 0.06918346755859951,
+          "amostras": 1789
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.29046541452407837,
+          "percorrido": 13.306600926891857,
+          "rmse_falha": 0.10533076244939098,
+          "rmse_fora": 0.184017260646911,
+          "amostras": 1792
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.3635595440864563,
+          "percorrido": 12.722688934459525,
+          "rmse_falha": 0.17462033720520279,
+          "rmse_fora": 0.16852355751301287,
+          "amostras": 1792
+        }
+      },
+      "ivw": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 8.659929556262313,
+          "rmse_falha": 2.772376076050508,
+          "rmse_fora": 0.17388966307177386,
+          "amostras": 1792
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 38.25,
+          "dist_min": 0.0,
+          "percorrido": 8.934796169031824,
+          "rmse_falha": 2.76701136023736,
+          "rmse_fora": 0.22143423366601156,
+          "amostras": 1791
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 37.75,
+          "dist_min": 0.0,
+          "percorrido": 8.87415067217347,
+          "rmse_falha": 2.7541120361286366,
+          "rmse_fora": 0.21582202537259496,
+          "amostras": 1791
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 37.5,
+          "dist_min": 0.0,
+          "percorrido": 8.729255279375707,
+          "rmse_falha": 2.750216826735408,
+          "rmse_fora": 0.21269081470175144,
+          "amostras": 1777
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.3,
+          "dist_min": 0.0,
+          "percorrido": 9.172639913609997,
+          "rmse_falha": 2.765759560238608,
+          "rmse_fora": 0.23482135819249314,
+          "amostras": 1791
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 8.750160474093391,
+          "rmse_falha": 2.776498866136196,
+          "rmse_fora": 0.1866200066012493,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.3,
+          "dist_min": 0.0,
+          "percorrido": 9.010809420845984,
+          "rmse_falha": 2.7702596762635565,
+          "rmse_fora": 0.2148113244436063,
+          "amostras": 1782
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 9.124447297172134,
+          "rmse_falha": 2.7726269444062464,
+          "rmse_fora": 0.1989331982075133,
+          "amostras": 1790
+        },
+        "8": {
+          "colisoes": 1,
+          "t_contato": 37.9,
+          "dist_min": 0.0,
+          "percorrido": 8.590422040870632,
+          "rmse_falha": 2.7641375853733434,
+          "rmse_fora": 0.264170835997595,
+          "amostras": 1786
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 8.664290057719564,
+          "rmse_falha": 2.7710448780334502,
+          "rmse_fora": 0.23242652671093744,
+          "amostras": 1792
+        }
+      },
+      "paraextrctr": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.75,
+          "dist_min": 0.0,
+          "percorrido": 9.038966231615056,
+          "rmse_falha": 1.1646016667374148,
+          "rmse_fora": 0.1611953715921096,
+          "amostras": 1791
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 9.070098020050686,
+          "rmse_falha": 1.1614140682339114,
+          "rmse_fora": 0.1630134998963398,
+          "amostras": 1791
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.0,
+          "dist_min": 0.0,
+          "percorrido": 9.103649570975142,
+          "rmse_falha": 1.151708778505252,
+          "rmse_fora": 0.15665182446538317,
+          "amostras": 1791
+        },
+        "3": {
+          "colisoes": 1,
+          "t_contato": 38.1,
+          "dist_min": 0.0,
+          "percorrido": 8.59007166772643,
+          "rmse_falha": 1.156193237839472,
+          "rmse_fora": 0.17287482937097137,
+          "amostras": 1787
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 9.182854317066717,
+          "rmse_falha": 1.1622598018204295,
+          "rmse_fora": 0.17252933088924108,
+          "amostras": 1792
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 9.090927470992764,
+          "rmse_falha": 1.1597306107185905,
+          "rmse_fora": 0.15980747070665755,
+          "amostras": 1791
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.7,
+          "dist_min": 0.0,
+          "percorrido": 8.643225644821122,
+          "rmse_falha": 1.1635319332297844,
+          "rmse_fora": 0.13545807355039008,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.7,
+          "dist_min": 0.0,
+          "percorrido": 8.9699782816229,
+          "rmse_falha": 1.1664085185100155,
+          "rmse_fora": 0.13824930664357193,
+          "amostras": 1787
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 38.9,
+          "dist_min": 0.0,
+          "percorrido": 9.029335949279695,
+          "rmse_falha": 1.166500453532943,
+          "rmse_fora": 0.16139396027467848,
+          "amostras": 1790
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.95,
+          "dist_min": 0.0,
+          "percorrido": 9.100454197481284,
+          "rmse_falha": 1.1694103681085146,
+          "rmse_fora": 0.12135384000215006,
+          "amostras": 1791
+        }
+      },
+      "kf_chi2": {
+        "0": {
+          "colisoes": 4,
+          "t_contato": 8.25,
+          "dist_min": 0.0,
+          "percorrido": 12.773928893343653,
+          "rmse_falha": 2.4016506945859883,
+          "rmse_fora": 0.2490872077271508,
+          "amostras": 1791,
+          "deteccao": 0.3844444444444444,
+          "falso_alarme": 0.06397306397306397
+        },
+        "1": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.36331653594970703,
+          "percorrido": 12.46698021895498,
+          "rmse_falha": 0.21880954369274336,
+          "rmse_fora": 0.27003762181752516,
+          "amostras": 1793,
+          "deteccao": 0.9944444444444445,
+          "falso_alarme": 0.05375139977603583
+        },
+        "2": {
+          "colisoes": 1,
+          "t_contato": 3.3,
+          "dist_min": 0.0,
+          "percorrido": 13.927760199544881,
+          "rmse_falha": 1.7924942583612349,
+          "rmse_fora": 0.18679028953538812,
+          "amostras": 1789,
+          "deteccao": 0.41444444444444445,
+          "falso_alarme": 0.047244094488188976
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.278482049703598,
+          "percorrido": 12.742235591536094,
+          "rmse_falha": 0.22182449923036043,
+          "rmse_fora": 0.11347536910552336,
+          "amostras": 1793,
+          "deteccao": 0.9944444444444445,
+          "falso_alarme": 0.04591265397536394
+        },
+        "4": {
+          "colisoes": 3,
+          "t_contato": 1.7,
+          "dist_min": 0.0,
+          "percorrido": 14.668500364007434,
+          "rmse_falha": 1.8914915439071562,
+          "rmse_fora": 0.10340680557283083,
+          "amostras": 1790,
+          "deteccao": 0.36444444444444446,
+          "falso_alarme": 0.038202247191011236
+        },
+        "5": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.29689139127731323,
+          "percorrido": 12.576168492495466,
+          "rmse_falha": 0.1689133402654686,
+          "rmse_fora": 0.27173576612504785,
+          "amostras": 1785,
+          "deteccao": 0.9955555555555555,
+          "falso_alarme": 0.07344632768361582
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 6.8,
+          "dist_min": 0.0,
+          "percorrido": 13.20507119024542,
+          "rmse_falha": 2.235720644332515,
+          "rmse_fora": 0.29467757927707877,
+          "amostras": 1789,
+          "deteccao": 0.3711111111111111,
+          "falso_alarme": 0.06411698537682789
+        },
+        "7": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.36845818161964417,
+          "percorrido": 12.37035567699619,
+          "rmse_falha": 0.21614768497132997,
+          "rmse_fora": 0.26092162393927837,
+          "amostras": 1792,
+          "deteccao": 0.9944444444444445,
+          "falso_alarme": 0.0515695067264574
+        },
+        "8": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.37810173630714417,
+          "percorrido": 12.402417702999166,
+          "rmse_falha": 0.22061533183591428,
+          "rmse_fora": 0.24647398530151515,
+          "amostras": 1792,
+          "deteccao": 0.9944444444444445,
+          "falso_alarme": 0.04596412556053812
+        },
+        "9": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.34279364347457886,
+          "percorrido": 12.35931428109292,
+          "rmse_falha": 0.21722646876807067,
+          "rmse_fora": 0.24609155260952548,
+          "amostras": 1750,
+          "deteccao": 0.9944444444444445,
+          "falso_alarme": 0.06588235294117648
+        }
+      }
+    },
+    "S6_duplo": {
+      "pal2v": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.4,
+          "dist_min": 0.0,
+          "percorrido": 8.988349904962687,
+          "rmse_falha": 1.1680294819495778,
+          "rmse_fora": 0.13584231104405675,
+          "amostras": 1786,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.046275395033860044
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 39.25,
+          "dist_min": 0.0,
+          "percorrido": 9.090114352101818,
+          "rmse_falha": 1.0039338815878975,
+          "rmse_fora": 0.14524528630515401,
+          "amostras": 1792,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.08744394618834081
+        },
+        "2": {
+          "colisoes": 1,
+          "t_contato": 38.05,
+          "dist_min": 0.0,
+          "percorrido": 8.620021988193683,
+          "rmse_falha": 1.252384576547667,
+          "rmse_fora": 0.18496351254764956,
+          "amostras": 1791,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.04713804713804714
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 39.05,
+          "dist_min": 0.0,
+          "percorrido": 8.967325555355004,
+          "rmse_falha": 1.1577781037928845,
+          "rmse_fora": 0.16316768688649888,
+          "amostras": 1792,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.043721973094170405
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.45,
+          "dist_min": 0.0,
+          "percorrido": 8.338351633449452,
+          "rmse_falha": 1.0578176847035403,
+          "rmse_fora": 0.1612004650769647,
+          "amostras": 1788,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.04617117117117117
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 39.2,
+          "dist_min": 0.0,
+          "percorrido": 8.65634915085792,
+          "rmse_falha": 1.0793709052601332,
+          "rmse_fora": 0.11887104859806934,
+          "amostras": 1792,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.043721973094170405
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 8.962746968070922,
+          "rmse_falha": 1.2051944410360416,
+          "rmse_fora": 0.11633482045167914,
+          "amostras": 1789,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.04049493813273341
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 9.197052364459061,
+          "rmse_falha": 1.2384667173760289,
+          "rmse_fora": 0.19536935780361278,
+          "amostras": 1792,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.04932735426008968
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 39.35,
+          "dist_min": 0.0,
+          "percorrido": 8.88249774236849,
+          "rmse_falha": 0.9664202316204804,
+          "rmse_fora": 0.09862068232851247,
+          "amostras": 1791,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.03928170594837262
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 8.959842944256085,
+          "rmse_falha": 1.234250783396116,
+          "rmse_fora": 0.12280511527156049,
+          "amostras": 1784,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.05090497737556561
+        }
+      },
+      "mean": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.8,
+          "dist_min": 0.0,
+          "percorrido": 8.612957628965562,
+          "rmse_falha": 1.5403639313681046,
+          "rmse_fora": 0.17735707200629014,
+          "amostras": 1792
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 39.35,
+          "dist_min": 0.0,
+          "percorrido": 8.916668025712296,
+          "rmse_falha": 1.5228711233717487,
+          "rmse_fora": 0.118526703984641,
+          "amostras": 1792
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 8.61022077674505,
+          "rmse_falha": 1.5270725477013996,
+          "rmse_fora": 0.17207772348127598,
+          "amostras": 1790
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 9.050795870592903,
+          "rmse_falha": 1.589377522180157,
+          "rmse_fora": 0.1460796948350265,
+          "amostras": 1793
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.6,
+          "dist_min": 0.0,
+          "percorrido": 9.176383936306884,
+          "rmse_falha": 1.6027508694090042,
+          "rmse_fora": 0.18750903024255705,
+          "amostras": 1792
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 39.05,
+          "dist_min": 0.0,
+          "percorrido": 9.016043437295426,
+          "rmse_falha": 1.5409903204962903,
+          "rmse_fora": 0.17030618879981727,
+          "amostras": 1791
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.7,
+          "dist_min": 0.0,
+          "percorrido": 9.015866357914861,
+          "rmse_falha": 1.589143033517966,
+          "rmse_fora": 0.15987374414141994,
+          "amostras": 1790
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.7,
+          "dist_min": 0.0,
+          "percorrido": 9.040024670350892,
+          "rmse_falha": 1.5771097620199612,
+          "rmse_fora": 0.13649280995281984,
+          "amostras": 1787
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 38.9,
+          "dist_min": 0.0,
+          "percorrido": 8.839319779968633,
+          "rmse_falha": 1.5108733328527117,
+          "rmse_fora": 0.1262856799652086,
+          "amostras": 1786
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.25,
+          "dist_min": 0.0,
+          "percorrido": 8.524696535473932,
+          "rmse_falha": 1.6026654616651732,
+          "rmse_fora": 0.14967151451732405,
+          "amostras": 1771
+        }
+      },
+      "median": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 8.950642877714783,
+          "rmse_falha": 1.2972817812005448,
+          "rmse_fora": 0.18420484742831364,
+          "amostras": 1787
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 8.861228769430301,
+          "rmse_falha": 1.1441902037335498,
+          "rmse_fora": 0.14265431131445114,
+          "amostras": 1790
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.1,
+          "dist_min": 0.0,
+          "percorrido": 8.612092994013544,
+          "rmse_falha": 1.4062350550279354,
+          "rmse_fora": 0.13540493636954637,
+          "amostras": 1789
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 38.3,
+          "dist_min": 0.0,
+          "percorrido": 9.086685638559945,
+          "rmse_falha": 1.413300736236664,
+          "rmse_fora": 0.1398889546499074,
+          "amostras": 1780
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.45,
+          "dist_min": 0.0,
+          "percorrido": 9.04290098699563,
+          "rmse_falha": 1.469406220523696,
+          "rmse_fora": 0.1669778681500451,
+          "amostras": 1790
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 39.7,
+          "dist_min": 0.0,
+          "percorrido": 8.975028752927276,
+          "rmse_falha": 1.1045528309501764,
+          "rmse_fora": 0.16357451182849067,
+          "amostras": 1791
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.75,
+          "dist_min": 0.0,
+          "percorrido": 8.975342627889209,
+          "rmse_falha": 1.3609542231203775,
+          "rmse_fora": 0.10415234487605653,
+          "amostras": 1791
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.5,
+          "dist_min": 0.0,
+          "percorrido": 8.351410501114993,
+          "rmse_falha": 1.2545543583560816,
+          "rmse_fora": 0.15801470155735706,
+          "amostras": 1789
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 39.25,
+          "dist_min": 0.0,
+          "percorrido": 8.584080365568925,
+          "rmse_falha": 1.1135949648163361,
+          "rmse_fora": 0.1343529023376915,
+          "amostras": 1791
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 36.7,
+          "dist_min": 0.0,
+          "percorrido": 9.29966913273406,
+          "rmse_falha": 1.6529973548398376,
+          "rmse_fora": 0.18388989492975522,
+          "amostras": 1759
+        }
+      },
+      "ivw": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 37.1,
+          "dist_min": 0.0,
+          "percorrido": 9.380195377387675,
+          "rmse_falha": 2.812637192914315,
+          "rmse_fora": 0.23033040135457344,
+          "amostras": 1792
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 38.3,
+          "dist_min": 0.0,
+          "percorrido": 8.996622981657918,
+          "rmse_falha": 2.842279722692408,
+          "rmse_fora": 0.21084345431636936,
+          "amostras": 1779
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 8.660826512623474,
+          "rmse_falha": 2.8342094956327886,
+          "rmse_fora": 0.21727785204674743,
+          "amostras": 1790
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 37.65,
+          "dist_min": 0.0,
+          "percorrido": 8.662623653753457,
+          "rmse_falha": 2.8320797972792233,
+          "rmse_fora": 0.20466531906062868,
+          "amostras": 1792
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 37.8,
+          "dist_min": 0.0,
+          "percorrido": 8.558363234394948,
+          "rmse_falha": 2.829872247764122,
+          "rmse_fora": 0.19217956094674865,
+          "amostras": 1780
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 9.191765939662558,
+          "rmse_falha": 2.8412714313975034,
+          "rmse_fora": 0.21705885050492596,
+          "amostras": 1792
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.65,
+          "dist_min": 0.0,
+          "percorrido": 9.194109518187945,
+          "rmse_falha": 2.841402938977475,
+          "rmse_fora": 0.22715668202462275,
+          "amostras": 1792
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.45,
+          "dist_min": 0.0,
+          "percorrido": 9.177338685456542,
+          "rmse_falha": 2.8360204501703614,
+          "rmse_fora": 0.3153738809757557,
+          "amostras": 1790
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 37.65,
+          "dist_min": 0.0,
+          "percorrido": 8.47665999611078,
+          "rmse_falha": 2.825392109734985,
+          "rmse_fora": 0.23404473642438905,
+          "amostras": 1771
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 38.05,
+          "dist_min": 0.0,
+          "percorrido": 9.0433144532466,
+          "rmse_falha": 2.8299994804377753,
+          "rmse_fora": 0.22607558930163507,
+          "amostras": 1781
+        }
+      },
+      "paraextrctr": {
+        "0": {
+          "colisoes": 2,
+          "t_contato": 38.8,
+          "dist_min": 0.0,
+          "percorrido": 8.65266934381346,
+          "rmse_falha": 1.453930860312259,
+          "rmse_fora": 0.1721419918799713,
+          "amostras": 1792
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 39.25,
+          "dist_min": 0.0,
+          "percorrido": 8.940646754327545,
+          "rmse_falha": 1.435661403201925,
+          "rmse_fora": 0.12509363913702543,
+          "amostras": 1792
+        },
+        "2": {
+          "colisoes": 2,
+          "t_contato": 38.2,
+          "dist_min": 0.0,
+          "percorrido": 8.730292243143216,
+          "rmse_falha": 1.5237494520885986,
+          "rmse_fora": 0.14042565077040686,
+          "amostras": 1791
+        },
+        "3": {
+          "colisoes": 2,
+          "t_contato": 38.1,
+          "dist_min": 0.0,
+          "percorrido": 8.873142254336216,
+          "rmse_falha": 1.5063595454214005,
+          "rmse_fora": 0.1833752286226512,
+          "amostras": 1792
+        },
+        "4": {
+          "colisoes": 2,
+          "t_contato": 38.4,
+          "dist_min": 0.0,
+          "percorrido": 9.047431382616388,
+          "rmse_falha": 1.5672671325735243,
+          "rmse_fora": 0.1459143132735923,
+          "amostras": 1790
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 39.25,
+          "dist_min": 0.0,
+          "percorrido": 8.964546216248305,
+          "rmse_falha": 1.4312969158547537,
+          "rmse_fora": 0.1261412574441514,
+          "amostras": 1793
+        },
+        "6": {
+          "colisoes": 2,
+          "t_contato": 38.7,
+          "dist_min": 0.0,
+          "percorrido": 9.099104456333901,
+          "rmse_falha": 1.5174653168729353,
+          "rmse_fora": 0.13171740802535575,
+          "amostras": 1790
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.55,
+          "dist_min": 0.0,
+          "percorrido": 9.102064480221776,
+          "rmse_falha": 1.526525072550017,
+          "rmse_fora": 0.16715275887765202,
+          "amostras": 1792
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 39.25,
+          "dist_min": 0.0,
+          "percorrido": 8.947274532500414,
+          "rmse_falha": 1.4177860008661372,
+          "rmse_fora": 0.1264983464952609,
+          "amostras": 1791
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 37.6,
+          "dist_min": 0.0,
+          "percorrido": 9.188464984550714,
+          "rmse_falha": 1.6055728226971375,
+          "rmse_fora": 0.18290961205176456,
+          "amostras": 1776
+        }
+      },
+      "kf_chi2": {
+        "0": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.26830923557281494,
+          "percorrido": 12.654462034090285,
+          "rmse_falha": 0.26111158587839106,
+          "rmse_fora": 0.16455570702976116,
+          "amostras": 1792,
+          "deteccao": 0.9933333333333333,
+          "falso_alarme": 0.04484304932735426
+        },
+        "1": {
+          "colisoes": 2,
+          "t_contato": 39.3,
+          "dist_min": 0.0,
+          "percorrido": 8.590568622953828,
+          "rmse_falha": 1.058250729809243,
+          "rmse_fora": 0.1624415574061896,
+          "amostras": 1790,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.06292134831460675
+        },
+        "2": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.4103490114212036,
+          "percorrido": 12.903139361423095,
+          "rmse_falha": 0.22780026461082326,
+          "rmse_fora": 0.27601696442469786,
+          "amostras": 1790,
+          "deteccao": 0.9966666666666667,
+          "falso_alarme": 0.07191011235955057
+        },
+        "3": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.34718650579452515,
+          "percorrido": 14.75961872083254,
+          "rmse_falha": 0.4157123555978791,
+          "rmse_fora": 0.15409433956979704,
+          "amostras": 1790,
+          "deteccao": 0.9955555555555555,
+          "falso_alarme": 0.056179775280898875
+        },
+        "4": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.15995894372463226,
+          "percorrido": 15.154208183113814,
+          "rmse_falha": 0.4224711398064156,
+          "rmse_fora": 0.0966273501989156,
+          "amostras": 1791,
+          "deteccao": 0.9966666666666667,
+          "falso_alarme": 0.04938271604938271
+        },
+        "5": {
+          "colisoes": 2,
+          "t_contato": 2.9,
+          "dist_min": 0.0,
+          "percorrido": 14.178724103516561,
+          "rmse_falha": 1.937314109300507,
+          "rmse_fora": 0.18055547364261684,
+          "amostras": 1789,
+          "deteccao": 0.40444444444444444,
+          "falso_alarme": 0.049493813273340834
+        },
+        "6": {
+          "colisoes": 0,
+          "t_contato": 0.0,
+          "dist_min": 0.15592710673809052,
+          "percorrido": 14.819786887995832,
+          "rmse_falha": 0.37358782280657904,
+          "rmse_fora": 0.17264789307988132,
+          "amostras": 1788,
+          "deteccao": 0.9966666666666667,
+          "falso_alarme": 0.05292792792792793
+        },
+        "7": {
+          "colisoes": 2,
+          "t_contato": 38.95,
+          "dist_min": 0.0,
+          "percorrido": 8.496357946217595,
+          "rmse_falha": 1.3567183216090322,
+          "rmse_fora": 0.17646769293248976,
+          "amostras": 1792,
+          "deteccao": 0.9977777777777778,
+          "falso_alarme": 0.05941704035874439
+        },
+        "8": {
+          "colisoes": 2,
+          "t_contato": 16.15,
+          "dist_min": 0.0,
+          "percorrido": 12.169354535506496,
+          "rmse_falha": 0.9296227286179313,
+          "rmse_fora": 0.23724915304382707,
+          "amostras": 1770,
+          "deteccao": 0.9966666666666667,
+          "falso_alarme": 0.06206896551724138
+        },
+        "9": {
+          "colisoes": 2,
+          "t_contato": 1.25,
+          "dist_min": 0.12151499837636948,
+          "percorrido": 13.41883517549192,
+          "rmse_falha": 0.41068634706679213,
+          "rmse_fora": 0.2863620239378834,
+          "amostras": 1773,
+          "deteccao": 0.9933333333333333,
+          "falso_alarme": 0.05956471935853379
+        }
+      }
+    }
+  }
+}

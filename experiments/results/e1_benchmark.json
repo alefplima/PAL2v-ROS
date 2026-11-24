@@ -1,0 +1,19 @@
+{
+  "env": {
+    "date": "2026-11-23T12:56:09",
+    "python": "3.13.7",
+    "numpy": "2.2.6",
+    "scipy": "1.17.0",
+    "lpa2v": "0.1.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu": "Intel64 Family 6 Model 142 Stepping 11, GenuineIntel"
+  },
+  "n_calls": 200000,
+  "us_per_call": {
+    "PAN (analyze, 12 estados)": 3.8522160000866275,
+    "lPANCell step": 0.6338335003238171,
+    "PAL2vFusion 3 sensores": 65.19646200118586,
+    "PAL2vController update": 4.807680000085384,
+    "ParaExtrctr 10 amostras": 40.23385000182316
+  }
+}

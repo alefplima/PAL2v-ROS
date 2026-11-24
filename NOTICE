@@ -1,0 +1,8 @@
+PAL2v-ROS
+Copyright 2025-2026 Alessandro Ferreira Paz Lima
+
+This product includes software developed by Alessandro Ferreira Paz Lima
+(Master's Program, Universidade Santa Cecília - UNISANTA, Brazil).
+
+ros2_ws/src/lpa2v_sim/models/turtlebot3_lpa derives from turtlebot3_gazebo 2.3.7
+(ROBOTIS Co., Ltd., Apache-2.0).

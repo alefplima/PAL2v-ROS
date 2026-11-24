@@ -1,0 +1,21 @@
+Tuning (random search, 200 eval.): PID (kp,ki,kd)=[37.092  0.242 12.528]; PAL2v-PI (kc,ki,td,E)=[117.812   0.503   0.756   5.31 ]; HybridPI CEP2019 (kp,ki)=[4.831 0.015]
+
+**Nominal scenario** (mean ± std, 30 seeds)
+
+| Arrangement | IAE [m·s] | Overshoot [%] | Settling [s] | Max. error in faults [m] | σ(dT/dt) [N/s] | p (IAE vs D) |
+|---|---|---|---|---|---|---|
+| A_PID+IVW | 4.3 ± 0.1 | 2.0 ± 1.2 | 1.47 ± 0.99 | 0.05 ± 0.01 | 1134 ± 17 | 1.9e-09 |
+| B_PID+median | 6.7 ± 0.4 | 15.2 ± 6.2 | 5.89 ± 0.19 | 0.30 ± 0.08 | 1609 ± 30 | 1.7e-06 |
+| C_PID+PAL2vFusion | 7.1 ± 0.4 | 19.6 ± 5.7 | 5.85 ± 0.26 | 0.31 ± 0.10 | 1557 ± 26 | 2.8e-04 |
+| D_PAL2vPI+PAL2vFusion | 7.2 ± 0.4 | 20.4 ± 5.2 | 5.84 ± 0.31 | 0.32 ± 0.11 | 1415 ± 26 | 1.0e+00 |
+| E_HybridPI_CEP2019+PAL2vFusion | 25.9 ± 4.1 | 55.2 ± 11.3 | 5.99 ± 0.00 | 1.82 ± 0.37 | 128 ± 4 | 1.9e-09 |
+
+**Scenario with sensor faults** (mean ± std, 30 seeds)
+
+| Arrangement | IAE [m·s] | Overshoot [%] | Settling [s] | Max. error in faults [m] | σ(dT/dt) [N/s] | p (IAE vs D) |
+|---|---|---|---|---|---|---|
+| A_PID+IVW | 14.6 ± 0.2 | 17.0 ± 4.3 | 5.97 ± 0.05 | 5.00 ± 0.00 | 1041 ± 17 | 1.9e-09 |
+| B_PID+median | 7.4 ± 0.5 | 15.3 ± 6.1 | 5.87 ± 0.23 | 0.68 ± 0.24 | 1607 ± 33 | 9.4e-01 |
+| C_PID+PAL2vFusion | 7.4 ± 0.5 | 19.9 ± 5.7 | 5.85 ± 0.26 | 0.44 ± 0.12 | 1575 ± 24 | 3.8e-04 |
+| D_PAL2vPI+PAL2vFusion | 7.5 ± 0.5 | 20.6 ± 5.1 | 5.83 ± 0.28 | 0.45 ± 0.12 | 1440 ± 24 | 1.0e+00 |
+| E_HybridPI_CEP2019+PAL2vFusion | 26.3 ± 4.0 | 55.7 ± 10.9 | 5.99 ± 0.00 | 1.86 ± 0.31 | 139 ± 5 | 1.9e-09 |

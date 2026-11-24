@@ -1,0 +1,21 @@
+# Same parameters as experiment E3 (experiments/e3_altitude.py)
+alt_fusion:
+  ros__parameters:
+    input_topics: ["/baro_alt", "/lidar_alt", "/gps_alt"]
+    input_type: "float64"
+    vmin: 0.0                        # altitude UD [m]
+    vmax: 10.0
+    # = PAL2vFusion.from_sigma([0.30, 0.03, 0.50], 0, 10, max_rate=4.0, dt=0.01)
+    ct_lim: [0.2332, 0.2004, 0.2332]
+    rate_lim: [0.1737, 0.0210, 0.2868]
+    rate_hz: 100.0
+alt_controller:
+  ros__parameters:
+    e_max: 5.31
+    td: 0.756
+    kc: 117.8
+    ki: 0.503
+    u_min: 0.0
+    u_max: 30.0
+    u_ff: 14.715
+    rate_hz: 100.0

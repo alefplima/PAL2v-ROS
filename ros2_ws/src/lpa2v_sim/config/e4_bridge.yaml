@@ -1,0 +1,8 @@
+# Gazebo <-> ROS 2 bridge of experiment E4
+- {ros_topic_name: "clock", gz_topic_name: "clock", ros_type_name: "rosgraph_msgs/msg/Clock", gz_type_name: "gz.msgs.Clock", direction: GZ_TO_ROS}
+- {ros_topic_name: "scan_raw", gz_topic_name: "scan_raw", ros_type_name: "sensor_msgs/msg/LaserScan", gz_type_name: "gz.msgs.LaserScan", direction: GZ_TO_ROS}
+- {ros_topic_name: "front_raw", gz_topic_name: "front_raw", ros_type_name: "sensor_msgs/msg/LaserScan", gz_type_name: "gz.msgs.LaserScan", direction: GZ_TO_ROS}
+- {ros_topic_name: "odom", gz_topic_name: "odom", ros_type_name: "nav_msgs/msg/Odometry", gz_type_name: "gz.msgs.Odometry", direction: GZ_TO_ROS}
+- {ros_topic_name: "bumper", gz_topic_name: "/world/e4_arena/model/tb3/link/base_link/sensor/bumper/contact", ros_type_name: "ros_gz_interfaces/msg/Contacts", gz_type_name: "gz.msgs.Contacts", direction: GZ_TO_ROS}
+- {ros_topic_name: "cmd_vel", gz_topic_name: "cmd_vel", ros_type_name: "geometry_msgs/msg/Twist", gz_type_name: "gz.msgs.Twist", direction: ROS_TO_GZ}
+- {ros_topic_name: "true_pose", gz_topic_name: "/model/tb3/pose", ros_type_name: "tf2_msgs/msg/TFMessage", gz_type_name: "gz.msgs.Pose_V", direction: GZ_TO_ROS}

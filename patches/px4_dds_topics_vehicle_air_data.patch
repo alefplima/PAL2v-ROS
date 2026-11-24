@@ -1,0 +1,21 @@
+diff --git a/src/modules/uxrce_dds_client/dds_topics.yaml b/src/modules/uxrce_dds_client/dds_topics.yaml
+index bbd0d8c631..81949ddab8 100644
+--- a/src/modules/uxrce_dds_client/dds_topics.yaml
++++ b/src/modules/uxrce_dds_client/dds_topics.yaml
+@@ -71,6 +71,16 @@ publications:
+   - topic: /fmu/out/vehicle_status
+     type: px4_msgs::msg::VehicleStatus
+ 
++  # LPA2v_ROS (E5): sensores de altitude e verdade da simulação para a fusão paraconsistente
++  - topic: /fmu/out/vehicle_air_data
++    type: px4_msgs::msg::VehicleAirData
++
++  - topic: /fmu/out/distance_sensor
++    type: px4_msgs::msg::DistanceSensor
++
++  - topic: /fmu/out/vehicle_local_position_groundtruth
++    type: px4_msgs::msg::VehicleLocalPosition
++
+   - topic: /fmu/out/airspeed_validated
+     type: px4_msgs::msg::AirspeedValidated
+ 

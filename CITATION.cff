@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "PAL2v-ROS: Paraconsistent Annotated Logic with two-valued annotation for ROS 2"
+abstract: "Pure-Python library of the Paraconsistent Annotated Logic with two-valued annotation (PAL2v) and ROS 2 nodes for fault-tolerant fusion of redundant sensors, with the Gazebo (TurtleBot3) and PX4 SITL experiments of the accompanying paper."
+authors:
+  - family-names: "Lima"
+    given-names: "Alessandro Ferreira Paz"
+    affiliation: "Universidade Santa Cecília (UNISANTA)"
+version: "1.0.0"
+date-released: "2026-11-24"
+license: Apache-2.0
+repository-code: "https://github.com/alefplima/PAL2v-ROS"
+keywords:
+  - paraconsistent logic
+  - PAL2v
+  - sensor fusion
+  - fault tolerance
+  - ROS 2
+  - PX4
+  - Gazebo

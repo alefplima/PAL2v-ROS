@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>lpa2v_ros</name>
+  <version>1.0.0</version>
+  <description>ROS 2 nodes (analysis, fusion, filtering and control) based on the Paraconsistent Annotated Logic with two-valued annotation (PAL2v)</description>
+  <maintainer email="alessandro.lima@unisanta.br">Alessandro Ferreira Paz Lima</maintainer>
+  <license>Apache-2.0</license>
+
+  <exec_depend>lpa2v</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>diagnostic_msgs</exec_depend>
+  <exec_depend>lpa2v_msgs</exec_depend>
+
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

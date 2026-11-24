@@ -1,0 +1,25 @@
+# workspace ROS 2
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+__pycache__/
+*.egg-info/
+*.pyc
+
+# raw batch data (published on Zenodo, see DATA.md)
+experiments/results/e4_runs/
+experiments/results/e5_runs/
+experiments/results/e5_piloto/
+experiments/results/v1_mediana/
+experiments/results/evidencias/
+experiments/results/*_lote*.log
+dist/
+
+# article in preparation and third-party PDFs (copyright)
+artigo/
+
+# Portuguese lab notebook (local)
+METODOLOGIA.md
+
+# local notes
+PROXIMOS_PASSOS_UBUNTU.md
