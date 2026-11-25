@@ -33,10 +33,11 @@ import matplotlib.pyplot as plt  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, "results")
 RUNS = os.path.join(RES, "e5_runs")
-METHODS = ["pal2v", "mean", "median", "ivw", "paraextrctr", "kf_chi2"]
-NAMES = {"pal2v": "PAL2vFusion", "mean": "Mean", "median": "Median", "ivw": "IVW", "paraextrctr": "ParaExtrctr",
+METHODS = ["pal2v_g", "pal2v", "mean", "median", "ivw", "paraextrctr", "kf_chi2"]
+REF = "pal2v_g"                       # main method (graded, no exclusion); "pal2v" = step, v1.0.0
+NAMES = {"pal2v_g": "PAL2vFusion (graded)", "pal2v": "PAL2vFusion step (v1.0)", "mean": "Mean", "median": "Median", "ivw": "IVW", "paraextrctr": "ParaExtrctr",
          "kf_chi2": "Kalman χ²"}
-COLORS = {"pal2v": "#1b7f5c", "mean": "#c0392b", "median": "#7d3c98", "ivw": "#d68910", "paraextrctr": "#2e86c1",
+COLORS = {"pal2v_g": "#1b7f5c", "pal2v": "#e6ab02", "mean": "#c0392b", "median": "#7d3c98", "ivw": "#d68910", "paraextrctr": "#2e86c1",
           "kf_chi2": "#a0522d"}
 SCEN = ["S0_nominal", "S1_travado", "S3_deriva", "S4_dropout", "S5_salto_gps", "S6_duplo"]
 # fault window [s] and indices of the faulty sensors (0 baro, 1 LiDAR, 2 GPS) - same as e5.launch.py
@@ -70,7 +71,7 @@ def metrics(d, scen, method, nom):
          "alt_min_falha": float(d["gt"][f].min()), "amostras": int(len(t))}
     if nom is not None:
         m["desvio_max"] = float(np.max(np.abs(d["gt"][f5] - np.interp(t[f5], *nom))))
-    if method in ("pal2v", "kf_chi2"):
+    if method in ("pal2v", "pal2v_g", "kf_chi2"):
         if bad:
             m["deteccao"] = float(np.mean([all(i in r for i in bad) for r, k in zip(d["rej"], f) if k]))
         m["falso_alarme"] = float(np.mean([len(r) > 0 for r, k in zip(d["rej"], f) if not k]))
@@ -79,7 +80,8 @@ def metrics(d, scen, method, nom):
 
 def open_loop(d, scen):
     x = np.c_[d["baro"], d["lidar"], d["gps"]]
-    fus = PAL2vFusion.from_sigma(SIGMA, 0.0, VMAX, max_rate=MAX_RATE, dt=1 / FS_CSV)
+    fus_g = PAL2vFusion.from_sigma(SIGMA, 0.0, VMAX, max_rate=MAX_RATE, dt=1 / FS_CSV, mode="graded")
+    fus = PAL2vFusion.from_sigma(SIGMA, 0.0, VMAX, max_rate=MAX_RATE, dt=1 / FS_CSV, mode="step")
     kf = KalmanChi2(SIGMA, q=KF_Q, dt=1 / FS_CSV)
     out = {k: np.empty(len(x)) for k in METHODS}
     for k in range(len(x)):
@@ -88,6 +90,7 @@ def open_loop(d, scen):
         out["ivw"][k] = fuse_ivw(x[k], SIGMA)
         out["paraextrctr"][k] = para_extractor(np.clip(x[k], 0.0, VMAX), 0.0, VMAX)
         out["pal2v"][k] = fus.update(x[k]).value
+        out["pal2v_g"][k] = fus_g.update(x[k]).value
         out["kf_chi2"][k] = kf.update(x[k])
     (a, b), _ = WIN[scen]
     f = (d["t"] >= a) & (d["t"] < b)
@@ -113,7 +116,7 @@ def main():
                 if m == "pal2v":
                     ol[s][seed] = open_loop(d, s)
     L = ["# E5 — PX4 SITL (x500), altitude by baro + LiDAR + GPS fusion in closed loop\n",
-         "Mean ± std over seeds. p = Wilcoxon paired by seed vs PAL2vFusion (RMSE in the fault; n ≥ 5).\n"]
+         "Mean ± std over seeds. p = Wilcoxon paired by seed vs PAL2vFusion graded (no exclusion) (RMSE in the fault; n ≥ 5).\n"]
     summ = {}
     for s in SCEN:
         (a, b), bad = WIN[s]
@@ -121,7 +124,8 @@ def main():
         L.append("| Method | n | Fusion RMSE in fault [m] | Max. trajectory deviation [m] | Min. alt. in fault [m] | % flights w/ ground touch | p |")
         L.append("|---|---|---|---|---|---|---|")
         summ[s] = {}
-        ref = per[s]["pal2v"]
+        ref = per[s][REF] or per[s]["pal2v"]
+        refm = REF if per[s][REF] else "pal2v"
         for m in METHODS:
             r = per[s][m]
             if not r:
@@ -130,19 +134,19 @@ def main():
             col = lambda k: [r[i][k] for i in seeds if k in r[i]]  # noqa: E731
             common = [i for i in seeds if i in ref]
             p = float("nan")
-            if m != "pal2v" and len(common) >= 5:
+            if m != refm and len(common) >= 5:
                 p = wilcoxon([r[i]["rmse_falha"] for i in common], [ref[i]["rmse_falha"] for i in common])
             pct = 100 * np.mean(col("toque_chao"))
             summ[s][m] = {"n": len(seeds), "pct_toque_chao": pct, "p_vs_pal2v": p,
                           **{k: float(np.mean(col(k))) for k in ("rmse_falha", "desvio_max", "alt_min_falha",
                                                                    "deteccao", "falso_alarme") if col(k)}}
-            name = f"**{NAMES[m]}**" if m == "pal2v" else NAMES[m]
+            name = f"**{NAMES[m]}**" if m == refm else NAMES[m]
             dv = fmt(col("desvio_max")) if col("desvio_max") else "n/a"
             L.append(f"| {name} | {len(seeds)} | {fmt(col('rmse_falha'))} | {dv} | {fmt(col('alt_min_falha'))} | "
-                     f"{pct:.0f} % | {'—' if m == 'pal2v' else (f'{p:.1e}' if p == p else 'n/a')} |")
-        for m in ("pal2v", "kf_chi2"):
+                     f"{pct:.0f} % | {'—' if m == refm else (f'{p:.1e}' if p == p else 'n/a')} |")
+        for m in ("pal2v_g", "pal2v", "kf_chi2"):
             if per[s][m] and "falso_alarme" in summ[s][m]:
-                det = f"faulty sensor(s) rejected in {100 * summ[s][m]['deteccao']:.0f} % of the fault; " if bad else ""
+                det = f"faulty sensor(s) out of tolerance (rejected in step; attenuated in graded) in {100 * summ[s][m]['deteccao']:.0f} % of the fault; " if bad else ""
                 L.append(f"\n{NAMES[m]}: {det}false alarm outside the fault {100 * summ[s][m]['falso_alarme']:.1f} %.")
     L.append("\n## Open loop (same sensor data, PAL2v flights): RMSE in the fault window [m]\n")
     L.append("| Scenario | " + " | ".join(NAMES[m] for m in METHODS) + " |")
@@ -164,7 +168,7 @@ def main():
 
 def figures():
     """True height (no measurement fault: simulator ground truth) of seed 0, per scenario."""
-    show = ["mean", "median", "kf_chi2", "pal2v"]
+    show = ["mean", "median", "kf_chi2", "pal2v", "pal2v_g"]
     sc = [s for s in SCEN if s != "S0_nominal"]
     fig, ax = plt.subplots(len(sc), 1, figsize=(10, 2.3 * len(sc)), sharex=True)
     for a, s in zip(ax, sc):
@@ -177,7 +181,7 @@ def figures():
                 continue
             d = load(p)
             ref = d
-            a.plot(d["t"], d["gt"], color=COLORS[m], lw=2 if m == "pal2v" else 1.3, label=NAMES[m])
+            a.plot(d["t"], d["gt"], color=COLORS[m], lw=2 if m == REF else 1.3, label=NAMES[m])
         if ref is not None:
             a.plot(ref["t"], ref["ref"], color="0.45", lw=1, ls="--", label="reference")
         a.set_ylim(-0.2, 6.5)

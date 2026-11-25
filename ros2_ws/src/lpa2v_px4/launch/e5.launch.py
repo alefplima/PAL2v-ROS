@@ -4,7 +4,7 @@
 
 Requires: ~/PX4-Autopilot built (make px4_sitl), MicroXRCEAgent in ~/.local/bin and px4_msgs sourced
 (see scripts/setup_px4.sh).
-method: pal2v | mean | median | ivw | paraextrctr | kf_chi2
+method: pal2v (step, v1.0) | pal2v_g (graded, no exclusion) | mean | median | ivw | paraextrctr | kf_chi2
 scenario: S0_nominal | S1_travado | S3_deriva | S4_dropout | S5_salto_gps | S6_duplo
 """
 import os
@@ -36,12 +36,13 @@ def _setup(context):
     share = get_package_share_directory("lpa2v_px4")
     sigma = _floats(a["sigma"])                 # baro, LiDAR, GPS [m] (estimated in the nominal flight)
     topics = ["/e5/baro", "/e5/lidar", "/e5/gps"]
-    if a["method"] == "pal2v":
+    if a["method"] in ("pal2v", "pal2v_g"):
+        mode = "graded" if a["method"] == "pal2v_g" else "step"
         f = PAL2vFusion.from_sigma(sigma, 0.0, VMAX, max_rate=float(a["max_rate"]), dt=1.0 / FS)
         fusion = Node(package="lpa2v_ros", executable="pal2v_fusion", name="e5_fusion",
                       parameters=[{"input_topics": topics, "input_type": "float64", "vmin": 0.0,
                                    "vmax": VMAX, "ct_lim": f.ct_lim, "rate_lim": f.rate_lim,
-                                   "rate_hz": FS}],
+                                   "rate_hz": FS, "mode": mode}],
                       remappings=[("fused", "/e5/fused"), ("fusion_state", "/e5/fusion_state")])
     else:
         fusion = Node(package="lpa2v_sim", executable="baseline_fusion", name="e5_fusion",

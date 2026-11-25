@@ -130,7 +130,7 @@ class TestFusion(unittest.TestCase):
 
     @staticmethod
     def make(rate=0.02):
-        return PAL2vFusion(0.0, 10.0, ct_lim=[0.05, 0.05, 0.05], rate_lim=[rate] * 3)
+        return PAL2vFusion(0.0, 10.0, ct_lim=[0.05, 0.05, 0.05], rate_lim=[rate] * 3, mode="step")
 
     def test_consistent_sensors(self):
         out = self.make().update([2.0, 2.0, 2.0])
@@ -149,7 +149,7 @@ class TestFusion(unittest.TestCase):
     def test_sensor_does_not_pull_its_own_reference(self):
         # I5: 3 m jump in a noisy sensor with a wide limit (2.33 m). Against the group that includes it, the
         # contradiction stays below the limit; against the ParaExtrctr of the others, it is rejected.
-        fus = PAL2vFusion(0.0, 10.0, ct_lim=[0.233, 0.200, 0.233], rate_lim=[1.0] * 3)
+        fus = PAL2vFusion(0.0, 10.0, ct_lim=[0.233, 0.200, 0.233], rate_lim=[1.0] * 3, mode="step")
         out = fus.update([2.0, 2.0, 5.0])
         self.assertEqual(out.rejected, [2])
         self.assertAlmostEqual(out.value, 2.0, places=9)
@@ -162,7 +162,7 @@ class TestFusion(unittest.TestCase):
         self.assertAlmostEqual(out.value, 2.0, places=9)
 
     def test_two_sensors_in_contradiction_is_indefinite(self):
-        fus = PAL2vFusion(0.0, 10.0, ct_lim=[0.05, 0.05], rate_lim=[1.0, 1.0])
+        fus = PAL2vFusion(0.0, 10.0, ct_lim=[0.05, 0.05], rate_lim=[1.0, 1.0], mode="step")
         first = fus.update([2.0, 2.0])
         out = fus.update([2.0, 6.0])
         self.assertTrue(out.indefinite)
@@ -171,8 +171,61 @@ class TestFusion(unittest.TestCase):
 
     def test_no_mean_no_median(self):
         # ParaExtrctr of 2 values is not the arithmetic mean: (2, 3) in the UD [0, 10]
-        out = PAL2vFusion(0.0, 10.0, [1, 1], [1, 1]).update([2.0, 3.0])
+        out = PAL2vFusion(0.0, 10.0, [1, 1], [1, 1], mode="step").update([2.0, 3.0])
         self.assertNotAlmostEqual(out.value, 2.5, places=3)
+
+
+class TestFusionGraded(unittest.TestCase):
+    """PAL2vFusion mode="graded": no source is excluded, evidence is attenuated by the tolerance interval."""
+
+    @staticmethod
+    def make(band=1.5, rate=0.02, n=3):
+        return PAL2vFusion(0.0, 10.0, ct_lim=[0.05] * n, rate_lim=[rate] * n, mode="graded", band=band)
+
+    def test_consistent_sensors_full_weight(self):
+        out = self.make().update([2.0, 2.0, 2.0])
+        self.assertEqual(out.weights, [1.0, 1.0, 1.0])
+        self.assertEqual(out.rejected, [])
+        self.assertAlmostEqual(out.value, 2.0, places=9)
+
+    def test_stuck_sensor_attenuated_not_removed(self):
+        fus = self.make()
+        for _ in range(3):
+            out = fus.update([2.0, 2.05, 8.0])
+        self.assertEqual(out.weights[2], 0.0)     # fully outside the tolerance
+        self.assertEqual(len(out.mu), 3)          # still analyzed and reported
+        self.assertEqual(out.labels[2], "⊤")
+        self.assertTrue(2.0 <= out.value <= 2.05)
+
+    def test_partial_attenuation_inside_band(self):
+        # contradiction 1.25x the limit with band 1.5 -> phi = 0.5: the sensor keeps half of its own evidence
+        fus = PAL2vFusion(0.0, 10.0, ct_lim=[0.04] * 3, rate_lim=[1.0] * 3, mode="graded", band=1.5)
+        out = fus.update([2.0, 2.0, 2.5])
+        self.assertAlmostEqual(out.weights[2], 0.5, places=6)
+        self.assertTrue(2.0 < out.value < fus.vmax)
+        self.assertEqual(out.rejected, [2])       # outside the tolerance (attenuated)
+
+    def test_step_is_limit_case(self):
+        x = [[2.0, 2.0, 2.0], [2.0, 2.02, 2.6], [2.01, 2.0, 7.0], [2.0, 2.03, 7.0]]
+        step, grad = (PAL2vFusion(0.0, 10.0, [0.05] * 3, [0.02] * 3, mode="step"),
+                      PAL2vFusion(0.0, 10.0, [0.05] * 3, [0.02] * 3, mode="graded", band=1.0 + 1e-9))
+        for xx in x:
+            a, b = step.update(xx), grad.update(xx)
+            self.assertAlmostEqual(a.value, b.value, places=6)
+            self.assertEqual(a.rejected, b.rejected)
+
+    def test_two_sources_in_contradiction_is_indefinite(self):
+        fus = self.make(n=2, rate=1.0)
+        first = fus.update([2.0, 2.0])
+        out = fus.update([2.0, 6.0])
+        self.assertTrue(out.indefinite)
+        self.assertEqual(out.certainty, 0.0)
+        self.assertEqual(out.weights, [1.0, 1.0])  # neither source is blamed
+        self.assertAlmostEqual(out.value, first.value)
+
+    def test_invalid_mode(self):
+        with self.assertRaises(ValueError):
+            PAL2vFusion(0.0, 10.0, [0.05] * 2, [0.05] * 2, mode="soft")
 
 
 class TestHybridPICEP2019(unittest.TestCase):

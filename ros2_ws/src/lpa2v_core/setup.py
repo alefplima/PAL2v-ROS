@@ -8,7 +8,7 @@ from setuptools import setup
 
 setup(
     name="lpa2v",
-    version="1.0.0",
+    version="1.1.0",
     description="Paraconsistent Annotated Logic with two-valued annotation (PAL2v) for robotics and control",
     author="Alessandro Ferreira Paz Lima",
     maintainer="Alessandro Ferreira Paz Lima",

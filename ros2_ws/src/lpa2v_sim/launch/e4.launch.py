@@ -2,7 +2,7 @@
 
   ros2 launch lpa2v_sim e4.launch.py method:=pal2v scenario:=S4_dropout seed:=0 gui:=true
 
-method: pal2v | mean | median | ivw | paraextrctr | kf_chi2     scenario: S0_nominal ... S4_dropout, S6_duplo
+method: pal2v (step, v1.0) | pal2v_g (graded, no exclusion) | mean | median | ivw | paraextrctr | kf_chi2     scenario: S0_nominal ... S4_dropout, S6_duplo
 gui:=false runs headless (batch); rtf limits the real-time factor (gui:=true forces 1.0).
 """
 import os
@@ -37,12 +37,14 @@ def _setup(context):
         gz[2:2] = ["-s", "--headless-rendering"]
     st = {"use_sim_time": True}
     topics = ["/e4/sonar", "/e4/lidar", "/e4/ir"]
-    if a["method"] == "pal2v":
+    if a["method"] in ("pal2v", "pal2v_g"):
+        mode = "graded" if a["method"] == "pal2v_g" else "step"
         f = PAL2vFusion.from_sigma(SIGMA, 0.0, RMAX, max_rate=MAX_RATE, dt=1.0 / FS)
         fusion = Node(package="lpa2v_ros", executable="pal2v_fusion", name="e4_fusion",
                       parameters=[st, {"input_topics": topics, "input_type": "float64",
                                        "vmin": 0.0, "vmax": RMAX, "ct_lim": f.ct_lim,
-                                       "rate_lim": f.rate_lim, "rate_hz": FS}],
+                                       "rate_lim": f.rate_lim, "rate_hz": FS,
+                                   "mode": mode}],
                       remappings=[("fused", "/e4/fused"), ("fusion_state", "/e4/fusion_state")])
     else:
         fusion = Node(package="lpa2v_sim", executable="baseline_fusion", name="e4_fusion",

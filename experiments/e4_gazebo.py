@@ -21,7 +21,7 @@ from datetime import datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RUNS = os.path.join(HERE, "results", "e4_runs")
-METHODS = ["pal2v", "mean", "median", "ivw", "paraextrctr", "kf_chi2"]
+METHODS = ["pal2v", "pal2v_g", "mean", "median", "ivw", "paraextrctr", "kf_chi2"]
 SCENARIOS = ["S0_nominal", "S1_travado", "S2_picos", "S3_deriva", "S4_dropout", "S6_duplo"]
 
 

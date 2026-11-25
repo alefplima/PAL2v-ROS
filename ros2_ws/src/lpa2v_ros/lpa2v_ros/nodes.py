@@ -48,7 +48,8 @@ class ParaAnalyzerNode(Node):
 class FusionNode(Node):
     """Fuses N redundant sensors with the NAP + ParaExtrctr network (no mean, no median). Parameters:
     input_topics (str[]), input_type ('float64'|'range'), vmin/vmax (UD), ct_lim (float[], contradiction
-    limits in the UD), rate_lim (float[], temporal contradiction limits in the UD), rate_hz (float)."""
+    limits in the UD), rate_lim (float[], temporal contradiction limits in the UD), rate_hz (float),
+    mode ("graded" default, no exclusion | "step" v1.0.0 limit case), band (graded: normalized contradiction where phi reaches 0)."""
 
     def __init__(self):
         super().__init__("pal2v_fusion")
@@ -60,10 +61,13 @@ class FusionNode(Node):
             ("ct_lim", [0.05, 0.05, 0.05]),
             ("rate_lim", [0.1, 0.1, 0.1]),
             ("rate_hz", 50.0),
+            ("mode", "graded"),
+            ("band", 1.5),
         ])
         g = {x.name: x.value for x in p}
         topics = list(g["input_topics"])
-        self.fusion = PAL2vFusion(g["vmin"], g["vmax"], g["ct_lim"], g["rate_lim"])
+        self.fusion = PAL2vFusion(g["vmin"], g["vmax"], g["ct_lim"], g["rate_lim"], mode=g["mode"],
+                                  band=g["band"])
         self.latest = [None] * len(topics)
         msg_t = Range if g["input_type"] == "range" else Float64
         for i, t in enumerate(topics):
@@ -97,7 +101,9 @@ class FusionNode(Node):
         st.level = DiagnosticStatus.OK if not out.rejected else DiagnosticStatus.WARN
         if out.indefinite:
             st.level = DiagnosticStatus.ERROR     # indefiniteness: output held
-        st.message = "ok" if not out.rejected else f"rejected sensors: {out.rejected}"
+        st.message = "ok" if not out.rejected else (
+            f"rejected sensors: {out.rejected}" if self.fusion.mode == "step"
+            else f"sensors outside the tolerance (attenuated): {out.rejected}")
         st.values = [KeyValue(key="certainty", value=f"{out.certainty:.3f}"),
                      KeyValue(key="contradiction", value=f"{out.contradiction:.3f}"),
                      KeyValue(key="compute_us", value=f"{dt_us:.1f}")]

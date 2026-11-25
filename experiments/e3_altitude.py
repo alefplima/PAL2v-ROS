@@ -33,6 +33,11 @@ HOVER = M * G
 SIGMA = np.array([0.30, 0.03, 0.50])
 FAULTS = [(10.0, 12.0), (20.0, 21.0)]
 UD = (0.0, 10.0)      # altitude Universe of Discourse [m] for the evidence extractor
+# PAL2vFusion mode: "graded" (no exclusion, v1.1 default for the paper) or "step" (v1.0.0 results).
+# Usage: LPA2V_FUSION_MODE=step python3 e3_altitude.py  -> results e3_altitude.json / e3_table.md (v1.0.0)
+#        python3 e3_altitude.py                         -> results e3_altitude_graded.json / e3_table_graded.md
+FUSION_MODE = __import__("os").environ.get("LPA2V_FUSION_MODE", "graded")
+SUFFIX = "" if FUSION_MODE == "step" else f"_{FUSION_MODE}"
 
 
 def reference(t):
@@ -43,7 +48,7 @@ def make_fusion():
     # same rule as E2 (library); maximum plausible vertical rate of 4 m/s.
     # Note: the 10 Hz GPS with zero-order hold jumps every 10 samples; the 4σ√2 term covers that jump.
     # altitude UD: [0, 10] m
-    return PAL2vFusion.from_sigma(SIGMA, UD[0], UD[1], max_rate=4.0, dt=DT)
+    return PAL2vFusion.from_sigma(SIGMA, UD[0], UD[1], max_rate=4.0, dt=DT, mode=FUSION_MODE)
 
 
 def simulate(seed, scen, controller, fusion_mode, log=False):
@@ -194,7 +199,8 @@ def main():
         for name in configs:
             res["results"][scen][name]["p_wilcoxon_IAE_vs_D"] = wilcoxon(
                 [m["IAE"] for m in raw[(scen, name)]], [m["IAE"] for m in ref])
-    save_json("e3_altitude.json", res)
+    res["fusion_mode"] = FUSION_MODE
+    save_json(f"e3_altitude{SUFFIX}.json", res)
 
     keys = [("IAE", "IAE [m·s]", 1), ("overshoot_%", "Overshoot [%]", 1),
             ("settling_s", "Settling [s]", 2), ("maxerr_fault_m", "Max. error in faults [m]", 2),
@@ -211,7 +217,7 @@ def main():
                 + f" | {r['p_wilcoxon_IAE_vs_D']:.1e} |")
     table = "\n".join(out)
     print(table)
-    with open(f"{RESULTS}/e3_table.md", "w", encoding="utf-8") as fh:
+    with open(f"{RESULTS}/e3_table{SUFFIX}.md", "w", encoding="utf-8") as fh:
         fh.write(f"Tuning (random search, {TUNE_BUDGET} eval.): PID (kp,ki,kd)={np.round(pid_p, 3)}; "
                  f"PAL2v-PI (kc,ki,td,E)={np.round(pal_p, 3)}; HybridPI CEP2019 (kp,ki)={np.round(hpi_p, 3)}\n" + table + "\n")
 
@@ -237,7 +243,7 @@ def main():
     axs[0].legend(fontsize=7, ncol=3)
     axs[-1].set_xlabel("time [s]  (gray band: wind gust)")
     fig.tight_layout()
-    fig.savefig(f"{RESULTS}/e3_altitude.png", dpi=150)
+    fig.savefig(f"{RESULTS}/e3_altitude{SUFFIX}.png", dpi=150)
 
 
 if __name__ == "__main__":

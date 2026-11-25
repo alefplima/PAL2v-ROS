@@ -89,6 +89,7 @@ class FusionOutput:
     rejected: List[int] = field(default_factory=list)
     indefinite: bool = False     # no decision possible: output held (retention)
     mu_group: float = 0.5        # muE of the accepted group (ParaExtrctr output)
+    weights: List[float] = field(default_factory=list)  # tolerance interval of each sensor (1 = full evidence)
 
 
 class PAL2vFusion:
@@ -96,18 +97,31 @@ class PAL2vFusion:
 
     Structure (paraconsistent analysis network):
       1. Evidence extractor: mu_i = (x_i - vmin)/(vmax - vmin) in the Universe of Discourse (UD).
-      2. Temporal NAP of each sensor: (mu_i(k), 1 - mu_i(k-1)) -> Gct_i^t = mu_i(k) - mu_i(k-1).
-         |Gct_i^t| > rate_lim_i (contradiction control limit Vscct/Vicct) -> sensor out.
-      3. ParaExtrctr over the remaining sensors -> muE of the group (contradiction effects extracted).
-      4. Spatial NAP of each sensor against the group: (mu_i, 1 - muE) -> Gct_i = mu_i - muE.
-         The sensor with the largest |Gct_i|/ct_lim_i above 1 is removed and step 3 is repeated.
-      5. Output = ParaExtrctr of the accepted sensors, denormalized.
-    With 2 sensors contradicting each other there is no way to decide which one is right: the network
-    declares INDEFINITENESS (as item 7 of the NAP) and holds the last defined output.
+      2. Temporal analysis of each sensor by a learning cell (CNAPap), one iteration = one sample:
+         (mu_i(k), 1 - p_i), where p_i is the learned pattern (the previous reading, cell run to convergence).
+         Gct_i^t = mu_i(k) - p_i; its tolerance is rate_lim_i (equivalently Gc = 1 - |Gct| >= 1 - rate_lim_i).
+      3. ParaExtrctr over the sensors -> muE of the group (contradiction effects extracted).
+      4. Spatial NAP of each sensor against the ParaExtrctr of the OTHERS: (mu_i, 1 - muE_o) -> Gct_i.
+
+    Two modes for what is done with a contradictory sensor:
+      mode="graded" (no exclusion; recommended): NO source leaves the network. Each sensor has a tolerance
+        interval phi_i = AND(phi_t, phi_s) (minimum connective) with phi(r) = 1 while the normalized contradiction
+        r = |Gct|/lim <= 1 (tolerance zone, as Ftct of the CNAPp) and falling linearly to 0 at r = band.
+        Its evidence enters the ParaExtrctr as  mu~_i = muE_o + phi_i (mu_i - muE_o): a fully contradictory sensor
+        contributes the evidence of the others (Gct = 0 against them), a consistent one contributes its own.
+        Sensors are processed from the most to the least contradictory (Gauss-Seidel order), so a faulty sensor
+        does not contaminate the reference of the healthy ones.
+      mode="step": the limit case band -> 1 (phi is 1 or 0), i.e. the sensor above the limit is retained
+        (v1.0 behaviour). Kept for reproducibility of v1.0.0.
+    With 2 sources contradicting each other neither can be blamed: the network's logical output is
+    INDEFINITENESS (certainty = 0, as item 7 of the NAP). The published value is then the last defined output
+    (hold_on_indefinite=True): this retention is a decision of the application layer that consumes the
+    indefiniteness signal (like the H signal of the CNAPd), not an exclusion made by the logic.
     """
 
     def __init__(self, vmin: float, vmax: float, ct_lim: Sequence[float],
-                 rate_lim: Sequence[float]):
+                 rate_lim: Sequence[float], mode: str = "graded", band: float = 1.5,
+                 hold_on_indefinite: bool = True):
         if vmax <= vmin:
             raise ValueError("vmax must be greater than vmin")
         self.n = len(ct_lim)
@@ -118,12 +132,17 @@ class PAL2vFusion:
         self.vmin, self.vmax = float(vmin), float(vmax)
         self.ct_lim = [float(v) for v in ct_lim]
         self.rate_lim = [float(v) for v in rate_lim]
+        if mode not in ("step", "graded"):
+            raise ValueError("mode must be 'step' or 'graded'")
+        if band <= 1.0:
+            raise ValueError("band must be > 1")
+        self.mode, self.band, self.hold = mode, float(band), bool(hold_on_indefinite)
         self._prev: Optional[List[float]] = None
         self._last: Optional[float] = None
 
     @classmethod
     def from_sigma(cls, sigma: Sequence[float], vmin: float, vmax: float, max_rate: float,
-                   dt: float, k: float = 4.0) -> "PAL2vFusion":
+                   dt: float, k: float = 4.0, **kw) -> "PAL2vFusion":
         """Contradiction control limits from the sensor noise (in UD units).
 
         ct_lim_i   = k * sqrt(sigma_i^2 + max_{j!=i} sigma_j^2) / (vmax - vmin): the comparison is made
@@ -138,7 +157,7 @@ class PAL2vFusion:
             sc = max(sj for j, sj in enumerate(s) if j != i)
             ct.append(k * math.sqrt(si ** 2 + sc ** 2) / span)
             rt.append((max_rate * dt + k * si * math.sqrt(2.0)) / span)
-        return cls(vmin, vmax, ct, rt)
+        return cls(vmin, vmax, ct, rt, **kw)
 
     def reset(self) -> None:
         self._prev, self._last = None, None
@@ -152,7 +171,70 @@ class PAL2vFusion:
             g.append(analyze(mu_max, 1.0 - mu_min).mu_er)
         return g[0]
 
+    def _phi(self, r: float) -> float:
+        """Tolerance interval: 1 inside the tolerance (r <= 1), linear to 0 at r = band."""
+        return clamp01((self.band - r) / (self.band - 1.0))
+
     def update(self, x: Sequence[float]) -> FusionOutput:
+        if self.mode == "graded":
+            return self._update_graded(x)
+        return self._update_step(x)
+
+    def _update_graded(self, x: Sequence[float]) -> FusionOutput:
+        mu = [normalize(float(v), self.vmin, self.vmax) for v in x]
+        if len(mu) != self.n:
+            raise ValueError(f"expected {self.n} sensors, got {len(mu)}")
+        prev = self._prev if self._prev is not None else mu
+        self._prev = mu
+        n = self.n
+        # 2. temporal CNAPap
+        phi_t = [self._phi(abs(analyze(mu[i], 1.0 - prev[i]).dct) / self.rate_lim[i]) for i in range(n)]
+        # 3-4. spatial NAP, most contradictory first; nobody is removed, evidence is attenuated
+        mt, w, done = list(mu), [1.0] * n, set()
+        indefinite = all(p == 0.0 for p in phi_t)
+        pair_phi = 1.0
+        while len(done) < n and not indefinite:
+            best = None
+            for i in range(n):
+                if i in done:
+                    continue
+                others = [j for j in range(n) if j != i and (j not in done or w[j] > 0.0)]
+                mo = self._extract([mt[j] for j in others]) if others else mu[i]
+                r = abs(analyze(mu[i], 1.0 - mo).dct) / self.ct_lim[i]
+                if best is None or r > best[0]:
+                    best = (r, i, mo, others)
+            r, i, mo, others = best
+            if len(others) <= 1:
+                # only two effective sources: contradiction cannot be attributed to either one
+                pair_phi = self._phi(r) if others else 1.0
+                for j in [k for k in range(n) if k not in done]:
+                    ref = mo if j == i else mu[i]       # each one is referred to the other source
+                    w[j] = phi_t[j]                     # only the temporal analysis attenuates
+                    mt[j] = ref + w[j] * (mu[j] - ref)
+                    done.add(j)
+                indefinite = pair_phi == 0.0
+                break
+            w[i] = min(phi_t[i], self._phi(r))
+            mt[i] = mo + w[i] * (mu[i] - mo)
+            done.add(i)
+        mu_g = self._extract(mt)
+        gct = [analyze(m, 1.0 - mu_g).dct for m in mu]
+        phi_e = [1.0 - abs(g) for g in gct]
+        eff = [i for i in range(n) if w[i] > 0.0]
+        labels = ["t" if (w[i] >= 1.0 and not indefinite) else ("⊤" if gct[i] >= 0 else "⊥")
+                  for i in range(n)]
+        cert = 0.0 if indefinite or not eff else min(min(phi_e[i] for i in eff), pair_phi)
+        if indefinite and self.hold and self._last is not None:
+            value = self._last
+        else:
+            value = denormalize(mu_g, self.vmin, self.vmax)
+            if not indefinite:
+                self._last = value
+        attenuated = [i for i in range(n) if w[i] < 1.0]   # outside the tolerance (not removed)
+        return FusionOutput(value, mu, gct, phi_e, labels, cert, max(abs(g) for g in gct),
+                            attenuated, indefinite, mu_g, w)
+
+    def _update_step(self, x: Sequence[float]) -> FusionOutput:
         mu = [normalize(float(v), self.vmin, self.vmax) for v in x]
         if len(mu) != self.n:
             raise ValueError(f"expected {self.n} sensors, got {len(mu)}")
@@ -197,7 +279,8 @@ class PAL2vFusion:
             self._last = value
             cert = min(phi_e[i] for i in cand)
         return FusionOutput(value, mu, gct, phi_e, labels, cert, max(abs(g) for g in gct),
-                            rejected, indefinite, mu_g)
+                            rejected, indefinite, mu_g,
+                            [0.0 if i in rejected else 1.0 for i in range(self.n)])
 
 
 # --------------------------------------------------------------------------- Controller

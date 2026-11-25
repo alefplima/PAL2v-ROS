@@ -1,19 +1,20 @@
 {
   "env": {
-    "date": "2026-11-23T12:56:09",
-    "python": "3.13.7",
-    "numpy": "2.2.6",
-    "scipy": "1.17.0",
-    "lpa2v": "0.1.0",
-    "platform": "Windows-11-10.0.26200-SP0",
-    "cpu": "Intel64 Family 6 Model 142 Stepping 11, GenuineIntel"
+    "date": "2026-11-25T18:55:48",
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "lpa2v": "1.1.0",
+    "platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.39",
+    "cpu": "x86_64"
   },
   "n_calls": 200000,
   "us_per_call": {
-    "PAN (analyze, 12 estados)": 3.8522160000866275,
-    "lPANCell step": 0.6338335003238171,
-    "PAL2vFusion 3 sensores": 65.19646200118586,
-    "PAL2vController update": 4.807680000085384,
-    "ParaExtrctr 10 amostras": 40.23385000182316
+    "PAN (analyze, 12 states)": 3.5958056099934765,
+    "lPANCell step": 0.4901471600078367,
+    "PAL2vFusion 3 sensors (step, v1.0)": 57.22451617999468,
+    "PAL2vFusion 3 sensors (graded)": 86.12179118001222,
+    "PAL2vController update": 4.5132975799788255,
+    "ParaExtrctr 10 samples": 36.33380229994145
   }
 }

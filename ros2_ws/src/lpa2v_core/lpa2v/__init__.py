@@ -3,7 +3,7 @@ from .core import (STATES, PANResult, analyze, classify, clamp01, denormalize, n
 from .algorithms import (PID, FusionOutput, LearningCell, PAL2vController, PAL2vFilter,
                          PAL2vFusion, ParaconsistentHybridPI, para_extractor)
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __all__ = ["STATES", "PANResult", "analyze", "classify", "clamp01", "denormalize", "normalize",
            "pan", "PID", "FusionOutput", "LearningCell", "PAL2vController", "PAL2vFilter",
            "PAL2vFusion", "ParaconsistentHybridPI", "para_extractor"]

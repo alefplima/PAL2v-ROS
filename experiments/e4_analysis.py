@@ -30,10 +30,11 @@ import matplotlib.pyplot as plt  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, "results")
 RUNS = os.path.join(RES, "e4_runs")
-METHODS = ["pal2v", "mean", "median", "ivw", "paraextrctr", "kf_chi2"]
-NAMES = {"pal2v": "PAL2vFusion", "mean": "Mean", "median": "Median", "ivw": "IVW", "paraextrctr": "ParaExtrctr",
+METHODS = ["pal2v_g", "pal2v", "mean", "median", "ivw", "paraextrctr", "kf_chi2"]
+REF = "pal2v_g"                       # main method (graded, no exclusion); "pal2v" = step, v1.0.0
+NAMES = {"pal2v_g": "PAL2vFusion (graded)", "pal2v": "PAL2vFusion step (v1.0)", "mean": "Mean", "median": "Median", "ivw": "IVW", "paraextrctr": "ParaExtrctr",
          "kf_chi2": "Kalman χ²"}
-COLORS = {"pal2v": "#1b7f5c", "mean": "#c0392b", "median": "#7d3c98", "ivw": "#d68910", "paraextrctr": "#2e86c1",
+COLORS = {"pal2v_g": "#1b7f5c", "pal2v": "#e6ab02", "mean": "#c0392b", "median": "#7d3c98", "ivw": "#d68910", "paraextrctr": "#2e86c1",
           "kf_chi2": "#a0522d"}
 SCEN = ["S0_nominal", "S1_travado", "S2_picos", "S3_deriva", "S4_dropout", "S6_duplo"]
 KF_Q = 100.0                          # same as e4.launch.py
@@ -64,7 +65,7 @@ def metrics(d, method):
          "dist_min": float(d["gt"].min()), "percorrido": float(np.nansum(step[step < 0.5])),
          "rmse_falha": float(np.sqrt(np.mean(e[f] ** 2))), "rmse_fora": float(np.sqrt(np.mean(e[~f] ** 2))),
          "amostras": int(len(d["t"]))}
-    if method in ("pal2v", "kf_chi2"):
+    if method in ("pal2v", "pal2v_g", "kf_chi2"):
         m["deteccao"] = float(d["rej_lidar"][f].mean())
         m["falso_alarme"] = float(d["rej_lidar"][~f].mean())
     return m
@@ -72,7 +73,8 @@ def metrics(d, method):
 
 def open_loop(d):
     x = np.c_[d["sonar"], d["lidar"], d["ir"]]
-    fus = PAL2vFusion.from_sigma(SIGMA, 0.0, RMAX, max_rate=MAX_RATE, dt=1 / FS)
+    fus_g = PAL2vFusion.from_sigma(SIGMA, 0.0, RMAX, max_rate=MAX_RATE, dt=1 / FS, mode="graded")
+    fus = PAL2vFusion.from_sigma(SIGMA, 0.0, RMAX, max_rate=MAX_RATE, dt=1 / FS, mode="step")
     out = {k: np.empty(len(x)) for k in METHODS}
     kf = KalmanChi2(SIGMA, q=KF_Q, dt=1 / FS)
     for k in range(len(x)):
@@ -81,6 +83,7 @@ def open_loop(d):
         out["ivw"][k] = fuse_ivw(x[k], SIGMA)
         out["paraextrctr"][k] = para_extractor(x[k], 0.0, RMAX)
         out["pal2v"][k] = fus.update(x[k]).value
+        out["pal2v_g"][k] = fus_g.update(x[k]).value
         out["kf_chi2"][k] = kf.update(x[k])
     f = (d["t"] >= FAULT[0]) & (d["t"] < FAULT[1])
     return {k: {"rmse_falha": float(np.sqrt(np.mean((v[f] - d["gt"][f]) ** 2))),
@@ -107,13 +110,14 @@ def main():
     summ, lines = {}, []
     lines.append("# E4 — TurtleBot3 in Gazebo, reactive avoidance with sonar + LiDAR + IR fusion (LiDAR fault at 30–75 s)\n")
     lines.append("Closed loop: the fusion method decides when to brake/turn. Mean ± std over seeds; "
-                 "**% runs w/ collision**; p = Wilcoxon paired by seed vs PAL2vFusion (time in contact).\n")
+                 "**% runs w/ collision**; p = Wilcoxon paired by seed vs PAL2vFusion graded (no exclusion) (time in contact).\n")
     for s in SCEN:
         lines.append(f"\n**{s}**\n")
         lines.append("| Method | n | % runs w/ collision | Collisions | Time in contact [s] | Min. true dist. [m] | Traveled [m] | RMSE in fault [m] | p |")
         lines.append("|---|---|---|---|---|---|---|---|---|")
         summ[s] = {}
-        ref = per[s]["pal2v"]
+        ref = per[s][REF] or per[s]["pal2v"]
+        refm = REF if per[s][REF] else "pal2v"
         for m in METHODS:
             r = per[s][m]
             if not r:
@@ -123,23 +127,23 @@ def main():
             pct = 100 * np.mean([r[i]["colisoes"] > 0 for i in seeds])
             common = [i for i in seeds if i in ref]
             p = float("nan")
-            if m != "pal2v" and len(common) >= 5:
+            if m != refm and len(common) >= 5:
                 a = [r[i]["t_contato"] for i in common]
                 b = [ref[i]["t_contato"] for i in common]
                 p = wilcoxon(a, b) if any(x != y for x, y in zip(a, b)) else 1.0
             summ[s][m] = {"n": len(seeds), "pct_colisao": pct, "p_vs_pal2v": p,
                           **{k: {"mean": float(np.mean(v[k])), "std": float(np.std(v[k], ddof=1)) if len(seeds) > 1 else 0.0}
                              for k in keys}}
-            if m in ("pal2v", "kf_chi2"):
+            if m in ("pal2v", "pal2v_g", "kf_chi2"):
                 summ[s][m]["deteccao"] = float(np.mean([r[i]["deteccao"] for i in seeds]))
                 summ[s][m]["falso_alarme"] = float(np.mean([r[i]["falso_alarme"] for i in seeds]))
-            name = f"**{NAMES[m]}**" if m == "pal2v" else NAMES[m]
+            name = f"**{NAMES[m]}**" if m == refm else NAMES[m]
             lines.append(f"| {name} | {len(seeds)} | {pct:.0f} % | {fmt(v['colisoes'])} | {fmt(v['t_contato'])} | "
                          f"{fmt(v['dist_min'])} | {fmt(v['percorrido'])} | {fmt(v['rmse_falha'])} | "
-                         f"{'—' if m == 'pal2v' else (f'{p:.1e}' if p == p else 'n/a')} |")
-        for mm in ("pal2v", "kf_chi2"):
+                         f"{'—' if m == refm else (f'{p:.1e}' if p == p else 'n/a')} |")
+        for mm in ("pal2v_g", "pal2v", "kf_chi2"):
             if per[s][mm]:
-                lines.append(f"\n{NAMES[mm]}: LiDAR rejected in {100 * summ[s][mm]['deteccao']:.0f} % of the fault "
+                lines.append(f"\n{NAMES[mm]}: LiDAR out of tolerance (rejected in step; attenuated in graded) in {100 * summ[s][mm]['deteccao']:.0f} % of the fault "
                              f"samples; false alarm outside the fault {100 * summ[s][mm]['falso_alarme']:.1f} %.")
     # open loop
     lines.append("\n## Open loop (same sensor data, PAL2v runs): RMSE in the fault window [m]\n")
@@ -165,9 +169,9 @@ def main():
 def figures(per):
     # 1) time in contact and % of runs with collision
     fig, ax = plt.subplots(1, 2, figsize=(13, 4.2))
-    w = 0.13
+    w = 0.115
     for j, m in enumerate(METHODS):
-        xs = np.arange(len(SCEN)) + (j - 2.5) * w
+        xs = np.arange(len(SCEN)) + (j - 3) * w
         tc = [np.mean([v["t_contato"] for v in per[s][m].values()]) if per[s][m] else 0 for s in SCEN]
         pc = [100 * np.mean([v["colisoes"] > 0 for v in per[s][m].values()]) if per[s][m] else 0 for s in SCEN]
         ax[0].bar(xs, tc, w, color=COLORS[m], label=NAMES[m])
@@ -186,7 +190,7 @@ def figures(per):
     fig, ax = plt.subplots(len(SCEN), 1, figsize=(11, 2.3 * len(SCEN)), sharex=True)
     for a, s in zip(ax, SCEN):
         a.axvspan(*FAULT, color="0.92")
-        for m in ("mean", "pal2v"):
+        for m in ("mean", "pal2v_g"):
             p = os.path.join(RUNS, s, f"{m}_s0.csv")
             if not os.path.exists(p):
                 continue

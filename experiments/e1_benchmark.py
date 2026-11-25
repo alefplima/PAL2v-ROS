@@ -30,7 +30,8 @@ def main():
         analyze(m, l)
 
     cell = LearningCell(lf=0.8)
-    fus3 = PAL2vFusion.from_sigma([0.3, 0.03, 0.5], 0.0, 10.0, max_rate=4.0, dt=0.01)
+    fus3 = PAL2vFusion.from_sigma([0.3, 0.03, 0.5], 0.0, 10.0, max_rate=4.0, dt=0.01, mode="step")
+    fus3g = PAL2vFusion.from_sigma([0.3, 0.03, 0.5], 0.0, 10.0, max_rate=4.0, dt=0.01, mode="graded")
     ctl = PAL2vController(2.0, 0.6, 12.0, 3.0, 0.0, 30.0, 14.7)
     data10 = [rng.random() * 10 for _ in range(10)]
     res = {
@@ -39,7 +40,8 @@ def main():
         "us_per_call": {
             "PAN (analyze, 12 states)": bench(pan_call, N),
             "lPANCell step": bench(lambda: cell.step(0.7), N),
-            "PAL2vFusion 3 sensors": bench(lambda: fus3.update([2.0, 2.01, 2.2]), N // 4),
+            "PAL2vFusion 3 sensors (step, v1.0)": bench(lambda: fus3.update([2.0, 2.01, 2.2]), N // 4),
+            "PAL2vFusion 3 sensors (graded)": bench(lambda: fus3g.update([2.0, 2.01, 2.2]), N // 4),
             "PAL2vController update": bench(lambda: ctl.update(3.0, 2.5, 0.01), N // 4),
             "ParaExtrctr 10 samples": bench(lambda: para_extractor(data10, 0, 10), N // 10),
         },

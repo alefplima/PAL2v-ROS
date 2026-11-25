@@ -11,7 +11,7 @@ generate each table and figure.
 ## Components
 | Package (`ros2_ws/src/`) | Contents |
 |---|---|
-| `lpa2v_core` (Python package `lpa2v`) | Paraconsistent Analysis Node (PAN, "NAP") with the indefiniteness rule (φE ≤ 0.25 or d > 1), 12-state Para-Analyzer, PANCd decision, ParaExtrctr, PAL2v learning cell/filter, **PAL2vFusion** (PAN + ParaExtrctr network) and the **PAL2v-PI** controller. Pure Python, 26 tests. |
+| `lpa2v_core` (Python package `lpa2v`) | Paraconsistent Analysis Node (PAN, "NAP") with the indefiniteness rule (φE ≤ 0.25 or d > 1), 12-state Para-Analyzer, PANCd decision, ParaExtrctr, PAL2v learning cell/filter, **PAL2vFusion** (PAN + ParaExtrctr network; `mode="graded"` attenuates contradictory sources by their tolerance interval instead of excluding them, `mode="step"` is the v1.0.0 limit case) and the **PAL2v-PI** controller. Pure Python, 32 tests. |
 | `lpa2v_msgs` | messages `Evidence`, `PANState`, `FusionState` |
 | `lpa2v_ros` | nodes `para_analyzer`, `pal2v_fusion` (state on `/diagnostics`), `pal2v_filter`, `pal2v_controller`, `altitude_sim` |
 | `lpa2v_sim` | E4: TurtleBot3 in Gazebo, arena, sensors with injected faults, baseline methods, logger |
@@ -39,7 +39,7 @@ pip install ./lpa2v_core
 ```
 ```python
 from lpa2v import PAL2vFusion
-fus = PAL2vFusion.from_sigma([0.05, 0.02, 0.08], vmin=0.0, vmax=4.0, max_rate=0.6, dt=0.02)
+fus = PAL2vFusion.from_sigma([0.05, 0.02, 0.08], vmin=0.0, vmax=4.0, max_rate=0.6, dt=0.02, mode="graded")
 fus.update([2.00, 2.00, 2.00])
 out = fus.update([2.01, 3.99, 2.03])          # sensor 1 in dropout
 print(out.value, out.rejected, out.labels)    # 2.02 [1] ['t', '⊤', 't']
