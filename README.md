@@ -1,6 +1,6 @@
 # PAL2v-ROS: Paraconsistent Annotated Logic for ROS 2
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24499334.svg)](https://doi.org/10.5281/zenodo.24499334)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24544260.svg)](https://doi.org/10.5281/zenodo.24544260)
 
 A library of the **Paraconsistent Annotated Logic with two-valued annotation (PAL2v, "LPA2v" in Portuguese)**
 for perception and control in mobile robots and drones. The core is pure Python with no dependencies, and
@@ -58,7 +58,7 @@ bash experiments/run_e5.sh              # E5, PX4 SITL (~5 h)
 ```
 
 ## How to cite
-Software: DOI [10.5281/zenodo.24499334](https://doi.org/10.5281/zenodo.24499334) (version 1.0.0, used in the paper);
+Software: DOI [10.5281/zenodo.24544260](https://doi.org/10.5281/zenodo.24544260) (version 1.1.0, used in the paper; version 1.0.0: [10.5281/zenodo.24499334](https://doi.org/10.5281/zenodo.24499334));
 [10.5281/zenodo.24499333](https://doi.org/10.5281/zenodo.24499333) always resolves to the latest version.
 See [CITATION.cff](CITATION.cff) (GitHub: "Cite this repository").
 
